@@ -1086,7 +1086,7 @@ app.post("/analyze-text", (req, res) => {
     }
     else {
       // 3. replace ’ with ' (some phones use ’ while contractions.json uses ')
-      textBoxContent = textBoxContent.replaceAll("’", "'");
+      // textBoxContent = textBoxContent.replaceAll("’", "'");
       // 4. analyze textBoxContent
       // https://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/
       let writeGoodSuggestions = writeGood(textBoxContent, { passive: false, adverb: false, illusion: false });
