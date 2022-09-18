@@ -15,7 +15,7 @@
           "groupsIds": [0, 1, 2],
           "group-members-min": 3,
           "group-members-max": 4,
-          "challenges": ["1st Challenge - Learning Companion App", "2nd Challenge - Find me that expert"],
+          "challenges": ["1ST CHALLENGE", "2ND CHALLENGE", "3RD CHALLENGE", "4TH CHALLENGE"],
           "challengesIds": [0, 1]
         },
         {
@@ -27,7 +27,7 @@
           "groupsIds": [0, 1, 2],
           "group-members-min": 2,
           "group-members-max": 2,
-          "challenges": ["1st Challenge - Learning Companion App", "2nd Challenge - Find me that expert"],
+          "challenges": ["1ST CHALLENGE", "2ND CHALLENGE", "3RD CHALLENGE", "4TH CHALLENGE"],
           "challengesIds": [0, 1]
         }
       ]
