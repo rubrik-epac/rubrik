@@ -1,0 +1,34 @@
+{
+      "email-fields-ordinals": ["First", "Second", "Third", "Fourth"],
+      "email-fields-placeholders": [
+        "alan.turing@alumnos.upm.es",
+        "barbara.liskov@alumnos.upm.es",
+        "john.von.newmann@alumnos.upm.es",
+        "richard.hamming@alumnos.upm.es"],
+      "evaluation": [
+        {
+          "name": "Continuous Eval.",
+          "nameId": 0,
+          "professors": ["Elena Montiel", "Jelena Bobkina", "Hanane Benali", "Patricia Martín", "Ruth Botrán"],
+          "professorsIds": [0, 1, 2, 3, 4],
+          "groups": ["7S1T (5002)", "7S1T-B (5102)", "Mixed group"],
+          "groupsIds": [0, 1, 2],
+          "group-members-min": 3,
+          "group-members-max": 4,
+          "challenges": ["1st Challenge - Learning Companion App", "2nd Challenge - Find me that expert"],
+          "challengesIds": [0, 1]
+        },
+        {
+          "name": "Final Exam Eval.",
+          "nameId": 1,
+          "professors": ["Elena Montiel", "Jelena Bobkina", "Hanane Benali", "Patricia Martín", "Ruth Botrán"],
+          "professorsIds": [0, 1, 2, 3, 4],
+          "groups": ["7S1T (5002)", "7S1T-B (5102)", "Mixed group"],
+          "groupsIds": [0, 1, 2],
+          "group-members-min": 2,
+          "group-members-max": 2,
+          "challenges": ["1st Challenge - Learning Companion App", "2nd Challenge - Find me that expert"],
+          "challengesIds": [0, 1]
+        }
+      ]
+  }

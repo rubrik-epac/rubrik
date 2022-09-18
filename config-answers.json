@@ -1,0 +1,312 @@
+{
+    "whatToGradeIds": {
+        "0": {
+            "correctChoicesIds": [0, 2],
+            "explanations": {
+                "0": "The title/subtitle is not catchy.",
+                "1": "The title/subtitle is formal.",
+                "2": "The title/subtitle does not provide enough information on the main innovation and contains redundant information."
+            }
+        },
+        "1": {
+            "correctChoicesIds": [0, 2],
+            "explanations": {
+                "0": "The title/subtitle is not catchy; does not follow a phrase structure.",
+                "1": "The title/subtitle is formal.",
+                "2": "The title/subtitle is too vague and does not provide enough information on the technology used."
+            }
+        },
+        "2": {
+            "correctChoicesIds": [1, 2],
+            "explanations": {
+                "0": "The title/subtitle is catchy and provocative.",
+                "1": "The title/subtitle is informal, contains contractions and colloquial language.",
+                "2": "The title/subtitle is too vague, does not capture the main innovation of the work."
+            }
+        },
+
+        "3": {
+            "correctChoicesIds": [3, 4, 5],
+            "explanations": {
+                "3": "The importance of the topic is not highlighted, not well motivated (why nowadays? Can it be justified with real data?).",
+                "4": "Current practices are not clearly identified (which current methods?). Limitations are very vague, not well supported, poorly organised.",
+                "5": "No images included to facilitate the understanding of the research."
+            }
+        },
+        "4": {
+            "correctChoicesIds": [3, 4, 5],
+            "explanations": {
+                "3": "The importance of the topic is not highlighted, not well motivated (why nowadays? Can it be justified with real data?).",
+                "4": "Current practices are not clearly identified. Limitations of the automated option (smart scanners) are mentioned at all.",
+                "5": "No images included to facilitate the understanding of the research."
+            }
+        },
+
+        "5": {
+            "correctChoicesIds": [6, 7, 8],
+            "explanations": {
+                "6": "The purpose of the research is not clearly defined (what is the main innovation? The camera (hardware)? An image recognition algorithm (software)? A combination of both?).",
+                "7": "The technology that lays behind the solution is not clear (what is a camera with spatial intelligence? What are its main characteristics?).",
+                "8": "The way this solution will cover the existing gaps is not described, as the limitations have not been identified previously."
+            }
+        },
+        "6": {
+            "correctChoicesIds": [6, 7, 8],
+            "explanations": {
+                "6": "The purpose of the research is vague (which technologies? How are they going to be combined?) and with grammar mistakes that difficult understanding.",
+                "7": "The technology that lays behind the solution is not clear (what is the facial recognition method/algorithm to be used?).",
+                "8": "The way this solution (the combination of both technologies) will cover the existing gaps is not described, as the limitations have not been identified previously."
+            }
+        },
+
+        "7": {
+            "correctChoicesIds": [10, 11, 12, 13],
+            "explanations": {
+                "9": "A description from the user's point of view is provided.",
+                "10": "A description from the designer's point of view is not provided (the algorithms are not mentioned, data storage mechanism are not explained, components interaction is not described, etc.).",
+                "11": "A graphical representation (architecture) of the solution is not included (instead, the images included do not illustrate the solution).",
+                "12": "Limitations are too broad. The first one could be applied to any technological solution.",
+                "13": "TRLs for technological components do not match the description (if facial recognition technology is widely used, it should correspond to a higher TRL)."
+            }
+        },
+        "8": {
+            "correctChoicesIds": [9, 10, 11, 12, 13],
+            "explanations": {
+                "9": "A description from the user's point of view is not provided (it is not clear how this solution is going to work, what functionalities it is going to have, once finished).",
+                "10": "A description from the designer's point of view is not clear (the technologies or components involved are not mentioned, data storage and security mechanisms are not explained, etc.).",
+                "11": "A graphical representation (architecture) of the solution is very vague (does not provide a clear idea of the solution proposed).",
+                "12": "Limitations are not mentioned at all.",
+                "13": "TRLs for technological components do not match the description (if application you propose to use is already developed and put into practice, it should correspond to a higher TRL)."
+            }
+        },
+
+        "9": {
+            "correctChoicesIds": [14, 15, 16],
+            "explanations": {
+                "14": "Beneficiaries are not clearly stated (all universities? all private companies?). No attempt to quantify the beneficiaries is done.",
+                "15": "Benefits should be better stated (what are the possible benefits in terms of economic and social impact). No attempt to quantify the benefits is done.",
+                "16": "The description of the impact is too vague (expressions like “lots of time” should be avoided)."
+            }
+        },
+        "10": {
+            "correctChoicesIds": [14, 15, 16],
+            "explanations": {
+                "14": "Beneficiaries are not clearly stated (only academic professors? Also 4000 students?).",
+                "15": "Benefits should be better stated (what are the possible benefits in terms of economic and social impact?). No attempt to quantify the benefits is done.",
+                "16": "The description of the impact is too vague (all academic professors) and limitations should have been mentioned in the Description section."
+            }
+        },
+
+        "11": {
+            "correctChoicesIds": [17, 18, 19],
+            "explanations": {
+                "17": "Tasks are not stated (too vague and too general; names for each of the stages are omitted; no subtasks are introduced).",
+                "18": "Timeframes, deadlines or milestones are not included.",
+                "19": "It is difficult to evaluate if the tasks and deadlines are achievable."
+            }
+        },
+        "12": {
+            "correctChoicesIds": [17, 18, 19],
+            "explanations": {
+                "17": "Phases are identified, but the tasks to be performed to achieve results are not clearly stated (they seem to describe the functioning of the app).",
+                "18": "Deadlines are included, but no timeframes.",
+                "19": "It is difficult to evaluate if the tasks and deadlines are achievable."
+            }
+        },
+
+        "13": {
+            "correctChoicesIds": [20, 21, 22, 25],
+            "explanations": {
+                "20": "Grammar and vocabulary errors.",
+                "21": "Some elements of informal style are detected (e.g., the use of colloquial language).",
+                "22": "Missing explanation.",
+                "23": "All information is located in the appropriate section.",
+                "24": "All information is presented logically and links together.",
+                "25": "Missing explanation."
+            }
+        },
+
+        "14": {
+            "correctChoicesIds": [26, 27, 28],
+            "explanations": {
+                "26": "The research territory is not clearly established. The authors do not explain why the research area is important and problematic (Why is “student attendance control” an issue? Why should alternative solutions be proposed? Why should it be enhanced? No reasons are mentioned).",
+                "27": "Existing solutions are not mentioned or identified (What are alternative solutions implemented so far by universities or other institutions?). The limitations are very vague, not well supported, and poorly organised.",
+                "28": "The research problem or gap to be covered is not clear."
+            }
+        },
+        "15": {
+            "correctChoicesIds": [],
+            "explanations": {
+                "26": "The research territory is clearly established and adequately justified (references).",
+                "27": "Several solutions are described, and their limitations are stated.",
+                "28": "The research problem or the gap to be covered is clear."
+            }
+        },
+
+        "16": {
+            "correctChoicesIds": [29, 30, 31, 32, 34],
+            "explanations": {
+                "29": "The solution the authors are proposing is not clearly described (Is it relying on a piece of hardware (scanner)?, on a technology (facial recognition, QR code)?, on a mobile application?).",
+                "30": "The way in which the existing gaps are covered is not stated, as gaps have not been previously identified.",
+                "31": "The technology is not clearly presented (Is it a mobile application that contains several features?). Information is not clearly organized. It is difficult to understand the flow of thought.",
+                "32": "A description of the research idea from the developer's perspective is not provided (the design concept and architecture are neither described nor illustrated).",
+                "33": "A description of the research idea from the user's perspective is provided (functioning and use), albeit poorly organised.",
+                "34": "Assumptions and limitations of the research idea are limited to the basic assumptions (use of smartphone)."
+            }
+        },
+        "17": {
+            "correctChoicesIds": [],
+            "explanations": {
+                "29": "The solution they are authors are proposing is clearly described (Fingerprint scanner).",
+                "30": "The way in which the existing gaps are stated and referred to explicitly in the text.",
+                "31": "The technologies behind the solution are clearly presented and accompanied by illustrations and references.",
+                "32": "A description of the research idea from a developer's perspective is provided (a corresponding subsection is included).",
+                "33": "A description of the research idea from a user's perspective is provided (a corresponding subsection is also included).",
+                "34": "The assumptions and limitations of the solution are enumerated and clearly detailed."
+            }
+        },
+
+        "18": {
+            "correctChoicesIds": [35, 36, 37, 38, 39, 40],
+            "explanations": {
+                "35": "The general impact of the solution is provided but not quantified (Any national or international missions the solution could contribute to?).",
+                "36": "Potential users of the proposal are mentioned but not quantified.",
+                "37": "Some payoffs are mentioned but possible risks are not specified.",
+                "38": "Stages of implementation are mentioned, but they are too generic (what are the specific steps/tasks to develop the proposed solution? How long will each task take? How are tasks sequenced?).",
+                "39": "Stages of implementation are mentioned, but they are too generic (what are the specific steps/tasks to develop the proposed solution? How long will each task take? How are tasks sequenced?).",
+                "40": "No Gantt chart is included to illustrate the work plan."
+            }
+        },
+        "19": {
+            "correctChoicesIds": [],
+            "explanations": {
+                "35": "The general impact of the solution is specified and quantified.",
+                "36": "Potential users of the proposal are clearly stated and quantified.",
+                "37": "The risks and payoffs of the solution are clearly described.",
+                "38": "Tasks/steps/stages for the implementation of the solution are specified and sequenced.",
+                "39": "Implementation time is allocated for each task.",
+                "40": "A Gantt chart is included to illustrate the work plan."
+            }
+        },
+
+        "20": {
+            "correctChoicesIds": [41, 42],
+            "explanations": {
+                "41": "The title is not precise (it does not refer to the key aspects of the innovation that is being proposed. It is not catchy or inspiring, and it does not follow common title conventions).",
+                "42": "The graphic support is not enough. The figure included in the description section does not illustrate the way in which the proposed solution would work (what are the main technological components? How do they interact (in a workflow or pipeline style)?)."
+            }
+        },
+        "21": {
+            "correctChoicesIds": [],
+            "explanations": {
+                "41": "The title contains all essential keywords of the research and encapsulates the essence of the paper.",
+                "42": "Six figures (photos, schemes and diagrams) are included to illustrate the design, architecture and the functioning of the proposal."
+            }
+        },
+
+        "22": {
+            "correctChoicesIds": [43, 44, 45, 46, 47],
+            "explanations": {
+                "43": "Some pieces of information are misplaced. For example, the description of current procedures to control students' attendance is located in section 2-Innovation.",
+                "44": "There is a lack of coherence in some sections (Background/Motivation or Description), so it is difficult to follow the author's thought.",
+                "45": "Ideas are poorly sequenced between the paragraphs (an elevated number of one-sentence paragraphs). The transitions between paragraphs are deficient. For example, paragraph 3 starts with “This method….”, though no method has been mentioned before.",
+                "46": "A great number of isolated sentences that are poorly related to the previous context.",
+                "47": "Insufficient number of connectors are used throughout the text. For example, only two connectors have been used in the Background/Motivation section (for example; furthermore)."
+            }
+        },
+        "23": {
+            "correctChoicesIds": [],
+            "explanations": {
+                "43": "All information is located in the appropriate section.",
+                "44": "The whole text is coherent and cohesive, so it is easy to follow it.",
+                "45": "Ideas are well-sequenced inside the paragraphs, and there is a smooth transition between paragraphs.",
+                "46": "Most of the paragraphs are well-structured, though there are some one-sentence paragraphs (e.g., in the Anticipated Impact section).",
+                "47": "A great variety of connecting devices is used (e.g. in the Background/Motivation sections: for example, in addition, as a result, regarding, nevertheless, due to, namely, for instance…)."
+            }
+        },
+
+        "24": {
+            "correctChoicesIds": [48, 49, 50, 51, 52],
+            "explanations": {
+                "48": "Missing explanation.",
+                "49": "Missing explanation.",
+                "50": "Some contractions, phrasal verbs and colloquial expressions are used in the text (e.g. “won't be lost”, “don't have an automatic system”, “as they enter class”, “This phase will be the one that will last the longest”, “a lot of applications”).",
+                "51": "The language is rather vague and imprecise. General, non-specialist vocabulary is used. Excessive use of repetitions (e.g., “Naturally the most important is the success of the process, but also the speed of this process is important, as the time is very important in the exams and with an automatic method can be achieved at a high speed).",
+                "52": "The author's style is too straightforward, no hedging devices are used (e.g., “there is no efficient and automated way to control students' attendance”)."
+            }
+        },
+        "25": {
+            "correctChoicesIds": [],
+            "explanations": {
+                "48": "Formal academic writing is used throughout the text.",
+                "49": "The use of personal pronouns is avoided and passive voice is used.",
+                "50": "No contractions, phrasal verbs, or colloquial language are used.",
+                "51": "Precise, specialist language is used (e.g. “enrollment phase”,  “accurate readouts”, “additional shielding”, etc.).",
+                "52": "Objective style is followed throughout the text. Hedging devices are used “internal network connectivity is crucial for the most part of the system”, “however unlikely, malicious actors could find a way to compromise the system”, “the whole system cost would be between …”)."
+            }
+        },
+
+        "26": {
+            "correctChoicesIds": [54, 55, 56],
+            "explanations": {
+                "53": "Missing explanation.",
+                "54": "Some statements are not justified (e.g., “there is no efficient and automated way to control students' attendance”, “The most widely used method today to monitor attendance is outdated”). In general, the Background/Motivation section is not well supported (only one citation is included).",
+                "55": "Insufficient amount of authoritative academic sources is used to justify the authors' claims.",
+                "56": "References do not follow the IEEE citation style."
+            }
+        },
+        "27": {
+            "correctChoicesIds": [],
+            "explanations": {
+                "53": "Plagiarism is avoided.",
+                "54": "All information that is not original is properly cited (paraphrased and direct citations are used).",
+                "55": "A great number of authoritative academic sources are used to justify the authors' claims.",
+                "56": "References are consistently used in the text according to the IEEE citation style."
+            }
+        },
+
+        "28": {
+            "correctChoicesIds": [59, 61, 62],
+            "explanations": {
+                "57": "The names of the authors and the group number are included on the first page.",
+                "58": "All pages are numbered.",
+                "59": "Format is not consistent (more than 2 fornt types are used, margins are not justified).",
+                "60": "Tables and figures are numbered.",
+                "61": "Tables and figures are not referred to in the body of the text.",
+                "62": "Missing explanation."
+            }
+        },
+        "29": {
+            "correctChoicesIds": [58],
+            "explanations": {
+                "57": "The names of the authors and the group number are included on the first page.",
+                "58": "Pages are NOT numbered.",
+                "59": "Format is consistent (not more than 2 font types are used, margins are justified, line spacing is consistent).",
+                "60": "Tables and figures are numbered.",
+                "61": "Tables and figures are referred to in the body of the text.",
+                "62": "Sources for tables and figures are included in the reference section according to the citation style."
+            }
+        },
+
+        "30": {
+            "correctChoicesIds": [63, 64, 65, 66, 67],
+            "explanations": {
+                "63": "Several basic grammar mistakes have been detected: 1) Besides, using this new method of controlling students' attendance will encourage the use of new technology in one of the more common points of the student life. 2) The only requirement needed to use this application is a smartphone, which currently a large part of the population, and specifically the students, already have.",
+                "64": "Missing explanation.",
+                "65": "Missing explanation.",
+                "66": "Missing explanation.",
+                "67": "Writing assistants have NOT been used to avoid major grammar and style errors."
+            }
+        },
+        "31": {
+            "correctChoicesIds": [],
+            "explanations": {
+                "63": "No spelling mistakes have been detected.",
+                "64": "Missing explanation.",
+                "65": "Spelling is consistent.",
+                "66": "Correct grammar is used.",
+                "67": "Writing assistants have been used to avoid major grammar and style errors."
+            }
+        }
+    }
+}

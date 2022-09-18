@@ -1,0 +1,763 @@
+{
+    "pentachart": {
+      "rubric": [
+        {
+          "category": "Sections & Content",
+          "bgColor": "#E6D2DC",
+          "gradePct": "85",
+          "issues": [
+            {
+              "title": "Title & Subtitle",
+              "id": 0,
+              "iconName": "Edit",
+              "description": [
+                "The title arouses interest and reflects tone.",
+                "It contains all essential keywords of the research and encapsulates the essence of the proposal.",
+                "The subtitle provides additional information of the research idea."
+              ],
+              "quizzes": {
+                "whatToDo": "Read the section and decide which of the following requirements are not met (more than one option could be chosen).",
+                "whatToGradeType": "text",
+                "whatToGrade": [
+                  "Control student attendance: Scan exams to control student attendance and recover them in case of loss.",
+                  "Digital authentication: Biometric personal data ensures correct attendance data and detects identity fraud.",
+                  "Don't lose my exam: Make your students' exams secure with just a fingerprint and an intelligent locker."
+                ],
+                "choices": [
+                  "The title/subtitle is interesting/catchy (uses words that create a positive impression and stimulate readers interest; is provocative, literary or imaginative; follows a phrase structure, not a full sentence structure, and contains mainly nouns).",
+                  "The title/subtitle is written in a formal tone (no contractions, no phrasal verbs, no abbreviations, no collocations or slang words, but impersonal and passive structures, objective language, technical terms, etc. are used).",
+                  "The title/subtitle clearly explains the essence of the proposal (predicts content, contains main keywords, captures main innovation, expands on the topic, does not contain redundant information)."
+                ],
+                "choicesIds": [
+                  0,
+                  1,
+                  2
+                ],
+                "whatToGradeIds": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            },
+            {
+              "title": "Background & Motivation",
+              "id": 1,
+              "iconName": "Crosshairs",
+              "description": [
+                "The reason for the research is precisely defined (not too broad, not too simple).",
+                "Current practices and/or approaches to (partially) solve the problem are briefly mentioned.",
+                "Limitations and gaps of those approaches are clearly stated."
+              ],
+              "quizzes": {
+                "whatToDo": "Read the section and decide which of the following requirements are not met (more than one option could be chosen).",
+                "whatToGradeType": "img-some-cols",
+                "whatToGrade": [
+                  "background-and-motivation-1.webp",
+                  "background-and-motivation-2.webp"
+                ],
+                "choices": [
+                  "The motivation of the research is clearly described (the research area is well established by highlighting the importance of the topic).",
+                  "Current practices (background) and their limitations are identified (gaps/limitations of current solutions are clearly stated, an open research problem is formulated).",
+                  "All information (including images) is pertinent and contributes to better understanding of the research."
+                ],
+                "choicesIds": [
+                  3,
+                  4,
+                  5
+                ],
+                "whatToGradeIds": [
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "title": "Innovation",
+              "id": 2,
+              "iconName": "Tips",
+              "description": [
+                "The research proposal is specifically defined.",
+                "The main technological solution is presented.",
+                "It is clear how the solution covers the gaps and contributes to the research aims."
+              ],
+              "quizzes": {
+                "whatToDo": "Read the section and decide which of the following requirements are not met (more than one option could be chosen).",
+                "whatToGradeType": "img-some-cols",
+                "whatToGrade": [
+                  "innovation-1.webp",
+                  "innovation-2.webp"
+                ],
+                "choices": [
+                  "The purpose of the research proposal is well defined (is it clear what the authors intend to do?).",
+                  "The technology that lays behind the solution is clear (are the key characteristics of the technological solution outlined?).",
+                  "The way this solution will cover the existing gaps is explicitly stated."
+                ],
+                "choicesIds": [
+                  6,
+                  7,
+                  8
+                ],
+                "whatToGradeIds": [
+                  5,
+                  6
+                ]
+              }
+            },
+            {
+              "title": "Description",
+              "id": 3,
+              "iconName": "Blockchain",
+              "description": [
+                "The authors provide an overview of the solution (how it works).",
+                "The authors provide a description of the components, tools, techniques, etc., the solution relies on (with graphical representation), and how they interact.",
+                "Assumptions and limitations are mentioned, as well as TRLs for components."
+              ],
+              "quizzes": {
+                "whatToDo": "Read the section and decide which of the following requirements are not met (more than one option could be chosen).",
+                "whatToGradeType": "img-some-cols",
+                "whatToGrade": [
+                  "description-1.webp",
+                  "description-2.webp"
+                ],
+                "choices": [
+                  "A description from the user's point of view is provided (how would it work, once developed).",
+                  "A description from the designer's point of view is provided (how do you plan to design it, what its architecture is going to be, what the main components/algorithms are (in case of reusing existing technology), how they are going to interact).",
+                  "A graphical representation (architecture) of the solution is added.",
+                  "Assumptions/limitations  of the solution are stated.",
+                  "TRLs for technological components are included."
+                ],
+                "choicesIds": [
+                  9,
+                  10,
+                  11,
+                  12,
+                  13
+                ],
+                "whatToGradeIds": [
+                  7,
+                  8
+                ]
+              }
+            },
+            {
+              "title": "Anticipated Impact",
+              "id": 4,
+              "iconName": "Bank",
+              "description": [
+                "Beneficiaries are stated and quantified.",
+                "Main benefits of the solution are highlighted (compared to current practices)."
+              ],
+              "quizzes": {
+                "whatToDo": "Read the section and decide which of the following requirements are not met (more than one option could be chosen).",
+                "whatToGradeType": "img-some-cols",
+                "whatToGrade": [
+                  "anticipated-impact-1.webp",
+                  "anticipated-impact-2.webp"
+                ],
+                "choices": [
+                  "Beneficiaries (potential end users) are clearly stated and quantified (describe clearly who benefits from your work -sponsors, national missions- and in what ways, quantify them if possible).",
+                  "Benefits are clearly stated and quantified (describe the payoffs in terms of social and economic impact, quantify the benefits if possible).",
+                  "The description of the impact is specific (vague phrases and generalizations are avoided)."
+                ],
+                "choicesIds": [
+                  14,
+                  15,
+                  16
+                ],
+                "whatToGradeIds": [
+                  9,
+                  10
+                ]
+              }
+            },
+            {
+              "title": "Path Forward (methodology)",
+              "id": 5,
+              "iconName": "Direction",
+              "description": [
+                "Tasks and deadlines to achieve the aims of the proposal are stated.",
+                "Tasks and deadlines are credible and achievable.",
+                "Anticipated TRL at project end is included."
+              ],
+              "quizzes": {
+                "whatToDo": "Read the section and decide which of the following requirements are not met (more than one option could be chosen).",
+                "whatToGradeType": "img-some-cols",
+                "whatToGrade": [
+                  "path-forward-1.webp",
+                  "path-forward-2.webp"
+                ],
+                "choices": [
+                  "Tasks to implement solution are clearly stated (not too vague and not too general; subtasks are formulated if necessary).",
+                  "Timeframes, deadlines and/or milestones are included for each of the tasks.",
+                  "Tasks and deadlines are achievable."
+                ],
+                "choicesIds": [
+                  17,
+                  18,
+                  19
+                ],
+                "whatToGradeIds": [
+                  11,
+                  12
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "category": "Grammar & Organization",
+          "bgColor": "#DCE9D5",
+          "gradePct": "15",
+          "issues": [
+            {
+              "title": "Grammar & Organization",
+              "id": 6,
+              "iconName": "Dashboard",
+              "description": [
+                "Correct grammar and formal style are used.",
+                "Information is located in the appropriate section, presented in a logical way, and easy to follow."
+              ],
+              "quizzes": {
+                "whatToDo": "Reread all the sections and decide which of the following requirements are not met (more than one option could be chosen).",
+                "whatToGradeType": "img-all-cols",
+                "whatToGrade": [
+                  "grammar-and-organization-1.webp"
+                ],
+                "choices": [
+                  "Correct spelling and grammar is used.",
+                  "Correct punctuation and capitalisation is used.",
+                  "Formal style is used (no contractions, no phrasal verbs, no collocations and slang words, but objective language, technical terms, impersonal and passive structures are used).",
+                  "All information is located in the appropriate section.",
+                  "All information is presented logically and links together.",
+                  "Parallel structures are used with bullet points."
+                ],
+                "choicesIds": [
+                  20,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25
+                ],
+                "whatToGradeIds": [
+                  13
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "selfAssessment": "pentachart self",
+      "peerAssessment": {
+        "scores": [
+          "1 = Unskilled and insufficient.",
+          "2 = Inconsistent, ineffective; shows a lack of consistent competence.",
+          "3 = Competent, effective, accurate and clear, but lacks the exemplary depth, precision, and insight of a 4.",
+          "4 = Exemplary, skilled, marked by excellence."
+        ],
+        "scoreOptions": [1,2,3,4]
+      }
+    },
+    "research": {
+      "rubric": [
+        {
+          "category": "Sections & Content",
+          "bgColor": "#E6D2DC",
+          "gradePct": "40",
+          "issues": [
+            {
+              "title": "Background & Motivation",
+              "id": 7,
+              "iconName": "BookOpen",
+              "description": [
+                "The research territory is clearly established (by showing that the general research area is important, central, interesting, or problematic in some way).",
+                "The background of the research (state-of-the-art) provides a critical account of what has been achieved so far (what is the gap? Why are existing solutions not good enough? Are the limitations of current approaches clearly stated?).",
+                "The research problem or research questions are clearly identified, and logically emerge from the background."
+              ],
+              "quizzes": {
+                "whatToDo": "Read the Background and Motivation section of the suggested Research Proposal and decide which of the following requirements are not met (more than one option could be chosen).",
+                "whatToGradeType": "text",
+                "whatToGrade": [
+                  "Control student's attendance https://drive.google.com/file/d/1dxkz_LyYx4eGJ6tvKnEl6BvQS9Z00Ic5/view",
+                  "Finger4All https://drive.google.com/file/d/1jaHxlGv8mATtZKZjjgeWWzZKD1WGkQxS/view"
+                ],
+                "choices": [
+                  "The research territory is clearly established (by showing that the general research area is important, central, interesting, or problematic in some way).",
+                  "The background of the research (state-of-the-art) provides a critical account of what has been achieved so far (what is the gap? Why are existing solutions not good enough? Are the limitations of current approaches clearly stated?).",
+                  "The research problem or research questions are clearly identified, and logically emerge from the background."
+                ],
+                "choicesIds": [
+                  26,
+                  27,
+                  28
+                ],
+                "whatToGradeIds": [
+                  14,
+                  15
+                ]
+              }
+            },
+            {
+              "title": "Innovation & Description",
+              "id": 8,
+              "iconName": "Lamp",
+              "description": [
+                "The main aim of the research is clearly defined.",
+                "The way in which the existing gaps are covered by the research idea is stated (competitive advantage).",
+                "The technology that lies behind the proposal is clearly specified (type of technology and how it is going to be applied).",
+                "A description of the research idea from a developer's perspective is provided (design concept, architecture).",
+                "A description of the research idea from a user's perspective is provided (functioning and use).",
+                "Assumptions and limitations of the research idea are clearly stated (real evidence that the proposal is achievable is included)."
+              ],
+              "quizzes": {
+                "whatToDo": "Read the Innovation and Description sections of the suggested Research Proposal and decide which of the following requirements are not met (more than one option could be chosen).",
+                "whatToGradeType": "text",
+                "whatToGrade": [
+                  "Control student's attendance https://drive.google.com/file/d/1dxkz_LyYx4eGJ6tvKnEl6BvQS9Z00Ic5/view",
+                  "Finger4All https://drive.google.com/file/d/1jaHxlGv8mATtZKZjjgeWWzZKD1WGkQxS/view"
+                ],
+                "choices": [
+                  "The main aim of the research is clearly defined.",
+                  "The way in which the existing gaps are covered by the research idea is stated (competitive advantage).",
+                  "The technology that lies behind the proposal is clearly specified (type of technology and how it is going to be applied).",
+                  "A description of the research idea from a developer's perspective is provided (design concept, architecture).",
+                  "A description of the research idea from a user's perspective is provided (functioning and use).",
+                  "Assumptions and limitations of the research idea are clearly stated (real evidence that the proposal is achievable is included)."
+                ],
+                "choicesIds": [
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34
+                ],
+                "whatToGradeIds": [
+                  16,
+                  17
+                ]
+              }
+            },
+            {
+              "title": "Anticipated Impact & Path Forward",
+              "id": 9,
+              "iconName": "Rocket",
+              "description": [
+                "The general impact of the solution is specified (and quantified, if possible).",
+                "Potential users of the proposal are clearly stated (and quantified, if possible).",
+                "Risks and payoffs of the solution are described.",
+                "Tasks/steps/stages for the implementation of the solution are specified and sequenced.",
+                "Implementation time is allocated for each task.",
+                "A Gantt chart is included to illustrate the work plan."
+              ],
+              "quizzes": {
+                "whatToDo": "Read the Anticipated Impact and Path Forward sections of the suggested Research Proposal and decide which of the following requirements are not met (more than one option could be chosen).",
+                "whatToGradeType": "text",
+                "whatToGrade": [
+                  "Control student's attendance https://drive.google.com/file/d/1dxkz_LyYx4eGJ6tvKnEl6BvQS9Z00Ic5/view",
+                  "Finger4All https://drive.google.com/file/d/1jaHxlGv8mATtZKZjjgeWWzZKD1WGkQxS/view"
+                ],
+                "choices": [
+                  "The general impact of the solution is specified (and quantified, if possible).",
+                  "Potential users of the proposal are clearly stated (and quantified, if possible).",
+                  "Risks and payoffs of the solution are described.",
+                  "Tasks/steps/stages for the implementation of the solution are specified and sequenced.",
+                  "Implementation time is allocated for each task.",
+                  "A Gantt chart is included to illustrate the work plan."
+                ],
+                "choicesIds": [
+                  35,
+                  36,
+                  37,
+                  38,
+                  39,
+                  40
+                ],
+                "whatToGradeIds": [
+                  18,
+                  19
+                ]
+              }
+            },
+            {
+              "title": "Title, Figures & Tables",
+              "id": 10,
+              "iconName": "Blackboard",
+              "description": [
+                "The title contains all essential keywords of the research and encapsulates the essence of the paper.",
+                "Figures and tables are elaborated to illustrate the solution and contribute to its understanding (especially in the description section for design concept, architecture, functioning & use, etc.)."
+              ],
+              "quizzes": {
+                "whatToDo": "Based on the Title, Figures, and Tables of the suggested Research Proposal, decide which of the following requirements are not met (more than one option could be chosen).",
+                "whatToGradeType": "text",
+                "whatToGrade": [
+                  "Control student's attendance https://drive.google.com/file/d/1dxkz_LyYx4eGJ6tvKnEl6BvQS9Z00Ic5/view",
+                  "Finger4All https://drive.google.com/file/d/1jaHxlGv8mATtZKZjjgeWWzZKD1WGkQxS/view"
+                ],
+                "choices": [
+                  "The title contains all essential keywords of the research and encapsulates the essence of the paper.",
+                  "Figures and tables are elaborated to illustrate the solution and contribute to its understanding (especially in the description section for design concept, architecture, functioning & use, etc.)."
+                ],
+                "choicesIds": [
+                  41,
+                  42
+                ],
+                "whatToGradeIds": [
+                  20,
+                  21
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "category": "Academic Writing",
+          "bgColor": "#CCDAF5",
+          "gradePct": "40",
+          "issues": [
+            {
+              "title": "Coherence & Cohesion",
+              "id": 11,
+              "iconName": "LayoutGrid",
+              "description": [
+                "All information is located in the appropriate section.",
+                "Information is presented in a logical way that is easy to follow.",
+                "Ideas are sequenced within paragraphs and there is a smooth transition between paragraphs (inter-and intra-coherence).",
+                "There are no isolated sentences not properly connected with.",
+                "Appropriate use of connectors and connecting devices."
+              ],
+              "quizzes": {
+                "whatToDo": "Read the suggested Research Proposal and decide which of the following Coherence & Cohesion Requirements are not met (more than one option could be chosen).",
+                "whatToGradeType": "text",
+                "whatToGrade": [
+                  "Control student's attendance https://drive.google.com/file/d/1dxkz_LyYx4eGJ6tvKnEl6BvQS9Z00Ic5/view",
+                  "Finger4All https://drive.google.com/file/d/1jaHxlGv8mATtZKZjjgeWWzZKD1WGkQxS/view"
+                ],
+                "choices": [
+                  "All information is located in the appropriate section.",
+                  "Information is presented in a logical way that is easy to follow.",
+                  "Ideas are sequenced within paragraphs and there is a smooth transition between paragraphs (inter-and intra-coherence).",
+                  "There are no isolated sentences not properly connected with.",
+                  "Appropriate use of connectors and connecting devices."
+                ],
+                "choicesIds": [
+                  43,
+                  44,
+                  45,
+                  46,
+                  47
+                ],
+                "whatToGradeIds": [
+                  22,
+                  23
+                ]
+              }
+            },
+            {
+              "title": "Style",
+              "id": 12,
+              "iconName": "Certificate",
+              "description": [
+                "Formal academic writing is used.",
+                "The use of personal pronouns is avoided and passive voice is used when appropriate (impersonal style).",
+                "No contractions, phrasal verbs, or colloquial language are used.",
+                "Precise, specialist language is used.",
+                "Personal beliefs or emotions are avoided (objective style)."
+              ],
+              "quizzes": {
+                "whatToDo": "Read the suggested Research Proposal and decide which of the following Style Requirements are not met (more than one option could be chosen).",
+                "whatToGradeType": "text",
+                "whatToGrade": [
+                  "Control student's attendance https://drive.google.com/file/d/1dxkz_LyYx4eGJ6tvKnEl6BvQS9Z00Ic5/view",
+                  "Finger4All https://drive.google.com/file/d/1jaHxlGv8mATtZKZjjgeWWzZKD1WGkQxS/view"
+                ],
+                "choices": [
+                  "Formal academic writing is used.",
+                  "The use of personal pronouns is avoided and passive voice is used when appropriate (impersonal style).",
+                  "No contractions, phrasal verbs, or colloquial language are used.",
+                  "Precise, specialist language is used.",
+                  "Personal beliefs or emotions are avoided (objective style)."
+                ],
+                "choicesIds": [
+                  48,
+                  49,
+                  50,
+                  51,
+                  52
+                ],
+                "whatToGradeIds": [
+                  24,
+                  25
+                ]
+              }
+            },
+            {
+              "title": "Citation & References",
+              "id": 13,
+              "iconName": "Hyperlink",
+              "description": [
+                "Plagiarism is avoided.",
+                "All information that is not original is properly cited (direct citation or paraphrased).",
+                "A considerable number of authoritative sources of information is used to justify claims (min. 5 sources).",
+                "References are consistently used in the text according to selected style (IEEE citation style)."
+              ],
+              "quizzes": {
+                "whatToDo": "Read the suggested Research Proposal and decide which of the following Citation and References Requirements are not met (more than one option could be chosen).",
+                "whatToGradeType": "text",
+                "whatToGrade": [
+                  "Control student's attendance https://drive.google.com/file/d/1dxkz_LyYx4eGJ6tvKnEl6BvQS9Z00Ic5/view",
+                  "Finger4All https://drive.google.com/file/d/1jaHxlGv8mATtZKZjjgeWWzZKD1WGkQxS/view"
+                ],
+                "choices": [
+                  "Plagiarism is avoided.",
+                  "All information that is not original is properly cited (direct citation or paraphrased).",
+                  "A considerable number of authoritative sources of information is used to justify claims (min. 5 sources).",
+                  "References are consistently used in the text according to selected style (IEEE citation style)."
+                ],
+                "choicesIds": [
+                  53,
+                  54,
+                  55,
+                  56
+                ],
+                "whatToGradeIds": [
+                  26,
+                  27
+                ]
+              }
+            },
+            {
+              "title": "Format & Aesthetics",
+              "id": 14,
+              "iconName": "AlignLeft",
+              "description": [
+                "The names of the authors and the group number are included on the first page.",
+                "All pages are numbered.",
+                "Consistent format (no more than 2 font types, main text has the same font size, line spacing is consistent, margins justified).",
+                "Tables and figures are correctly numbered.",
+                "Tables and figures are mentioned and discussed in the text.",
+                "Sources for tables and figures are included in the reference section according to the citation style."
+              ],
+              "quizzes": {
+                "whatToDo": "Read the suggested Research Proposal and decide which of the following Format and Aesthetics Requirements are not met (more than one option could be chosen).",
+                "whatToGradeType": "text",
+                "whatToGrade": [
+                  "Control student's attendance https://drive.google.com/file/d/1dxkz_LyYx4eGJ6tvKnEl6BvQS9Z00Ic5/view",
+                  "Finger4All https://drive.google.com/file/d/1jaHxlGv8mATtZKZjjgeWWzZKD1WGkQxS/view"
+                ],
+                "choices": [
+                  "The names of the authors and the group number are included on the first page.",
+                  "All pages are numbered.",
+                  "Consistent format (no more than 2 font types, main text has the same font size, line spacing is consistent, margins justified).",
+                  "Tables and figures are correctly numbered.",
+                  "Tables and figures are mentioned and discussed in the text.",
+                  "Sources for tables and figures are included in the reference section according to the citation style."
+                ],
+                "choicesIds": [
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62
+                ],
+                "whatToGradeIds": [
+                  28,
+                  29
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "category": "Spelling & Grammar",
+          "bgColor": "#DCE9D5",
+          "gradePct": "20",
+          "issues": [
+            {
+              "title": "Spelling & Grammar",
+              "id": 15,
+              "iconName": "Kindle",
+              "description": [
+                "There are no spelling mistakes.",
+                "A spell checker has been used and a manual double-check has been performed.",
+                "Spelling is consistent (no mixture of British and American spelling).",
+                "Correct grammar is used.",
+                "Writing assistants have been used to avoid major grammar and style errors."
+              ],
+              "quizzes": {
+                "whatToDo": "Read the suggested Research Proposal and decide which of the following Spelling and Grammar Requirements are not met (more than one option could be chosen).",
+                "whatToGradeType": "text",
+                "whatToGrade": [
+                  "Control student's attendance https://drive.google.com/file/d/1dxkz_LyYx4eGJ6tvKnEl6BvQS9Z00Ic5/view",
+                  "Finger4All https://drive.google.com/file/d/1jaHxlGv8mATtZKZjjgeWWzZKD1WGkQxS/view"
+                ],
+                "choices": [
+                  "There are no spelling mistakes.",
+                  "A spell checker has been used and a manual double-check has been performed.",
+                  "Spelling is consistent (no mixture of British and American spelling).",
+                  "Correct grammar is used.",
+                  "Writing assistants have been used to avoid major grammar and style errors."
+                ],
+                "choicesIds": [
+                  63,
+                  64,
+                  65,
+                  66,
+                  67
+                ],
+                "whatToGradeIds": [
+                  30,
+                  31
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "selfAssessment": "research self",
+      "peerAssessment": {
+        "scores": [
+          "0 = Bad performance. Unskilled and insufficient.",
+          "1 = Below the average performance. Inconsistent, ineffective; shows a lack of consistent competence.",
+          "2 = Average performance. Satisfactory, but lacks accuracy and effectiveness.",
+          "3 = Good performance. Competent, effective, accurate and clear, but lacks the exemplary depth, precision, and insight of excellent performance.",
+          "4 = Excellent performance. Exemplary, skilled, marked by excellence."
+        ],
+        "scoreOptions": [0,1,2,3,4]
+      }
+    },
+    "presentation": {
+      "rubric": [
+        {
+          "category": "Sections & Content",
+          "bgColor": "#E6D2DC",
+          "gradePct": "70",
+          "issues": [
+            {
+              "title": "Introduction",
+              "id": 16,
+              "iconName": "Introduction",
+              "description": [
+                "The presenter greets the audience.",
+                "The presenter introduces him/herself.",
+                "The presenter includes an effective & well-integrated attention-getting technique or opener.",
+                "The presenter sets the theme or introduces the topic clearly.",
+                "The presenter shows the outline appropriately."
+              ]
+            },
+            {
+              "title": "Conclusion",
+              "id": 18,
+              "iconName": "Conclusion",
+              "description": [
+                "The presenter summarises main points effectively.",
+                "The presenter relates to the introduction.",
+                "The presenter leaves the audience with a take-home message.",
+                "The presenter invites questions effectively."
+              ]
+            },
+            {
+              "title": "Organization",
+              "id": 19,
+              "iconName": "ViewColumn",
+              "description": [
+                "The presenter balances parts in terms of length and content.",
+                "The presenter sticks to the allotted time.",
+                "The presenter opens and closes each section with a clear transition (signposting).",
+                "The presenter has a logical progression of ideas."
+              ]
+            },
+            {
+              "title": "Content",
+              "id": 20,
+              "iconName": "3DCube",
+              "description": [
+                "The presenter adapts the content to the audience.",
+                "The presenter shows evidence of literature research (by means of oral citations or references to previous research).",
+                "The presenter offers effective supports for the proposed solution (examples, statistics, testimonies, citation, etc.).",
+                "The presenter includes a visual metaphor or simile to clarify an idea.",
+                "The presenter includes and effectively describes graphical information (charts, graphs, figures)."
+              ]
+            },
+            {
+              "title": "Design of audio-visual aids",
+              "id": 20,
+              "iconName": "Image",
+              "description": [
+                "The presenter's visuals are relevant and effective, appropriately supporting the message.",
+                "The presenter's visuals are visible / audible (font, size, contrast)."
+              ]
+            }
+          ]
+        },
+        {
+          "category": "Delivery",
+          "bgColor": "#CCDAF5",
+          "gradePct": "15",
+          "issues": [
+            {
+              "title": "Physical delivery",
+              "id": 22,
+              "iconName": "Stars",
+              "description": [
+                "The presenter is speaking, not reading.",
+                "The presenter uses appropriate and effective gestures.",
+                "The presenter establishes eye-contact.",
+                "The presenter doesn't turn his/her back to audience."
+              ]
+            },
+            {
+              "title": "Vocal delivery",
+              "id": 23,
+              "iconName": "Speech",
+              "description": [
+                "The presenter speaks at an appropriate pace.",
+                "The presenter speaks loudly and clearly, with an appropriate intonation.",
+                "The presenter speaks fluently, avoiding frequent repetitions, hesitations and gap fillers."
+              ]
+            },
+            {
+              "title": "Audience interaction",
+              "id": 24,
+              "iconName": "AddUser",
+              "description": [
+                "The presenter handles questions effectively.",
+                "The presenter demonstrates enthusiasm.",
+                "The presenter speaks with self-assurance."
+              ]
+            }
+          ]
+        },
+        {
+          "category": "Language",
+          "bgColor": "#DCE9D5",
+          "gradePct": "15",
+          "issues": [
+            {
+              "title": "Language",
+              "id": 31,
+              "iconName": "Voice2",
+              "description": [
+                "The presenter employs characteristics of spoken formal language.",
+                "The presenter uses topically rich and diverse vocabulary.",
+                "The presenter uses grammar correctly.",
+                "The presenter uses correct pronunciation.",
+                "The presenter handles questions effectively."
+              ]
+            }
+          ]
+        }
+      ],
+      "selfAssessment": "presentation self",
+      "peerAssessment": {
+        "scores": [
+          "1 = Poor.",
+          "2 = Average.",
+          "3 = Very good."
+        ],
+        "scoreOptions": [1,2,3]
+      }
+    }
+  }
