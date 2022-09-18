@@ -7,7 +7,7 @@
         "richard.hamming@alumnos.upm.es"],
       "evaluation": [
         {
-          "name": "Continuous Eval.",
+          "name": "PROGRESSIVE EVALUATION",
           "nameId": 0,
           "professors": ["Elena Montiel", "Jelena Bobkina", "Hanane Benali", "Patricia Martín", "Ruth Botrán"],
           "professorsIds": [0, 1, 2, 3, 4],
@@ -19,7 +19,7 @@
           "challengesIds": [0, 1]
         },
         {
-          "name": "Final Exam Eval.",
+          "name": "GLOBAL EVALUATION",
           "nameId": 1,
           "professors": ["Elena Montiel", "Jelena Bobkina", "Hanane Benali", "Patricia Martín", "Ruth Botrán"],
           "professorsIds": [0, 1, 2, 3, 4],
