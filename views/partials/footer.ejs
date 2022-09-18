@@ -1,0 +1,19 @@
+<div class="footer">
+    <div class="container">
+        <div class="copyright">
+            <div>© 2022 EPAC</div>
+            <div class="copyright-2">- English for Professional and Academic Communication -</div>
+        </div>
+        <div class="contact-container">
+            <div class="contact">
+                <% if (locals.footerContactInfo) { %>
+                    <% for (var i=0; i<footerContactInfo["contact-emails"].length; i++){ %>
+                        <a class="mailto" href="mailto:<%= footerContactInfo['contact-emails'][i].toString() %>"><img src="images/svg/EnvelopeClosed2.svg">
+                            <%= footerContactInfo['contact-emails'][i].toString() %>
+                        </a>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>

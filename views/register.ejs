@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Start of 'document character encoding' rule-->
+    <meta charset="UTF-8">
+    <!--End of 'document character encoding' rule-->
+
+    <!--Start of 'document compatibility mode' rule (for legacy IE browsers)-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!--End of 'document compatibility mode' rule (for legacy IE browsers)-->
+
+    <!--Start of viewport (visible web content area) rules-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--End of viewport (visible web content area) rules-->
+
+    <!--Start of page title (on browser tab, bookmarks, etc.)-->
+    <title>Rubrik | Register</title>
+    <!--End of page title (on browser tab, bookmarks, etc.)-->
+
+    <!--Start of styles-->
+    <link rel="stylesheet" href="css/shared/common.css" />
+    <link rel="stylesheet" href="css/shared/auth.css" />
+    <!--End of styles-->
+
+    <!--Start of favicon (icon on browser tab, bookmarks, etc.)-->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <!--End of favicon (icon on browser tab, bookmarks, etc.)-->
+
+    <!--Start of scripts-->
+    <script src="js/axios.js" defer></script>
+    <script src="js/shared/auth.js" defer></script>
+    <!--End of scripts-->
+</head>
+
+<body>
+    <!--.container sets max width for content-->
+    <div class="container">
+
+        <!--.auth-container sets same starting point for register/login/reset-password forms-->
+        <div class="auth-container">
+
+            <!--Start of auth welcome-->
+            <div class="auth-welcome">
+                <h1>Get<span>started</span>.</h1>
+            </div>
+            <!--End of auth welcome-->
+
+            <!--Start of auth msg-->
+            <div class="auth-msg">Register your group to unlock all features.</div>
+            <!--End of auth msg-->
+
+            <!--Start of form-->
+            <form class="auth-form">
+
+                <!--Start of if block-->
+                <% if (locals.registerParams) { %>
+                    <!--Validation passed (register params successfully passed from server to frontend)-->
+                    <!--Display select options (evaluation type, professor, challenge and group)-->
+                    <div class="auth-row-group">
+                        <select autocomplete="off" name="evaluation-type" id="evaluation-type">
+                            <% registerParams.evaluation.forEach(function(item){ %>
+                            <option data-professors="<%= item['professors'] %>"
+                                    data-challenges="<%= item['challenges'] %>"
+                                    data-groups="<%= item['groups'] %>"
+                                    data-min="<%= item['group-members-min'] %>"
+                                    data-max="<%= item['group-members-max'] %>"
+                                    value="<%= item.name %>"><%= item.name %>
+                            </option>
+                            <% }) %>
+                        </select>
+                        <select autocomplete="off" name="professor" id="professor">
+                            <% registerParams.evaluation[0]["professors"].forEach(function(item){ %>
+                                <option value="<%= item %>"><%= item %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="auth-row-group">
+                        <select autocomplete="off" name="challenge" id="challenge">
+                            <% registerParams.evaluation[0]["challenges"].forEach(function(item){ %>
+                                <option value="<%= item %>"><%= item %></option>
+                            <% }) %>
+                        </select>
+                        <select autocomplete="off" name="group" id="group">
+                            <% registerParams.evaluation[0]["groups"].forEach(function(item){ %>
+                                <option value="<%= item %>"><%= item %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <!--Display email fields-->
+                    <% for (var i=0; i<registerParams["email-fields-ordinals"].length; i++){ %>
+                    <div class="auth-group">
+                        <label for="email-<%= (i+1).toString() %>">
+                            <img src="images/svg/User.svg" loading=“lazy” decoding=“async” alt="User">
+                            <%= registerParams["email-fields-ordinals"][i] %> member's email address
+                            <% if (i >= registerParams.evaluation[0]["group-members-min"] && i < registerParams.evaluation[0]["group-members-max"]) { %>
+                            <span class="info">
+                                i
+                                <span class="tooltip">Optional</span>
+                            </span>
+                            <% } %>
+                        </label>
+                        <% if (i >= registerParams.evaluation[0]["group-members-max"]) { %>
+                            <input type="email" disabled id="email-<%= (i+1).toString() %>" data-placeholder="<%= registerParams['email-fields-placeholders'][i] %>" placeholder="">
+                        <% } else { %>
+                            <input type="email" id="email-<%= (i+1).toString() %>" data-placeholder="<%= registerParams['email-fields-placeholders'][i] %>" placeholder="">
+                        <% } %>
+                    </div>
+                <% } %>
+                <!--End of if block-->
+
+                <!--Start of else block-->
+                <% } else { %>
+                    <!--Validation not passed-->
+                    <!--Inform of error-->
+                    <div class="auth-info auth-error">
+                        Oops, this is embarrassing.
+                        We could not load the course's assessment options so you will not be able to sign up for the time being.
+                        Please contact a professor/tutor.
+                    </div>
+                    <!--Display dummy email fields-->
+                    <div class="auth-group">
+                        <label for="email-1"> <img src="images/svg/User.svg" loading=“lazy” decoding=“async” alt="User">First member's email address</label>
+                        <input type="email" id="email-1" data-placeholder="alan.turing@alumnos.upm.es" placeholder="">
+                    </div>
+                    <div class="auth-group">
+                        <label for="email-2"> <img src="images/svg/User.svg" loading=“lazy” decoding=“async” alt="User">Second member's email address</label>
+                        <input type="email" id="email-2" data-placeholder="barbara.liskov@alumnos.upm.es" placeholder="">
+                    </div>
+                    <div class="auth-group">
+                        <label for="email-3">
+                            <img src="images/svg/User.svg" loading=“lazy” decoding=“async” alt="User">
+                            Third member's email address
+                            <span class="info">
+                                i
+                                <span class="tooltip">Optional</span>
+                            </span>
+                        </label>
+                        <input type="email" id="email-3" data-placeholder="john.von.newmann@alumnos.upm.es" placeholder="">
+                    </div>
+                    <div class="auth-group">
+                        <label for="email-4">
+                            <img src="images/svg/User.svg" loading=“lazy” decoding=“async” alt="User">
+                            Fourth member's email address
+                            <span class="info">
+                                i
+                                <span class="tooltip">Optional</span>
+                            </span>
+                        </label>
+                        <input type="email" id="email-4" data-placeholder="richard.hamming@alumnos.upm.es" placeholder="">
+                    </div>
+                <% } %>
+                <!--End of else block-->
+
+                <!--Start of common part of form (whether validation is passed or not)-->
+                <div class="auth-group">
+                    <label for="register-password">
+                        <img src="images/svg/Lock.svg" loading=“lazy” decoding=“async” alt="Lock">Group's password
+                    </label>
+                    <input type="password" id="register-password" placeholder="">
+                </div>
+                <div class="auth-group">
+                    <a class="auth-btn" id="register">Register</a>
+                </div>
+                <div class="auth-row-group centered">
+                    Already registered?
+                    <a href="/login" class="do-instead"> Log in instead</a>
+                </div>
+                <!--End of common part of form (whether validation is passed or not)-->
+
+            </form>
+            <!--End of form-->
+
+        </div>
+    
+    </div>
+</body>
+</html>

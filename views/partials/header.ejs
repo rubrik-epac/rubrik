@@ -1,0 +1,29 @@
+<!--.header [fixed, full-width background]-->
+<!--#header [for event listener for background color change on scroll]-->
+<div class="header" id="header">
+    <!--.container sets max width for content-->
+    <!--.header-content sets effective height of header-->
+    <div class="container header-content">
+        <div class="logo">
+            <a href="#">Rubrik</a>
+        </div>
+        <div class="menu">
+            <div class="nav">
+                <!--#nav-hero, #nav-tool, #nav-about [for css media queries to progressively hide]-->
+                <!--smooth scroll on click to #hero, #tool, #about sections-->
+                <a id="nav-1" href="#hero">Home</a>
+                <a id="nav-2" href="#tool">Course Assistant<span>Beta</span></a>
+                <a id="nav-3" href="#about">About Us</a>
+            </div>
+            <% if (!locals.user) { %>
+                <div class="auth">
+                    <a href="/login">Sign in</a>
+                </div>
+            <% } else { %>
+                <div class="auth">
+                    <a>Logout</a>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>

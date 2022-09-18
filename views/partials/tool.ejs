@@ -1,0 +1,27 @@
+<!--.tool-container [full-width background]-->
+<div class="tool-container">
+    <!--.container sets max width for content-->
+    <div class="container">
+        <div class="tool-box">
+            <div class="tool">
+                <div class="tool-header">
+                    <!--match data-option to response from get request /tool-->
+                    <div data-option="rubric" class="tool-header-option tool-header-option-active">Assessment Rubric</div>
+                    <div data-option="selfAssessment" class="tool-header-option">Self Assessment</div>
+                    <div data-option="peerAssessment" class="tool-header-option">Peer Assessment</div>
+                </div>
+                <div class="tool-data">
+                    <div class="tool-menu">
+                        <!--Generated from generateLeftSideMenu function on js/partials/tool.js-->
+                    </div>
+
+                    <div class="tool-content" id="tool-content">
+                        <div class="tool-content-container">
+                            <!--Generated from generateRubricItem/generatePeerScoreItem/generateSelfAssessmentItem functions on js/partials/tool.js-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

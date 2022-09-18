@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Start of 'document character encoding' rule-->
+    <meta charset="UTF-8">
+    <!--End of 'document character encoding' rule-->
+
+    <!--Start of 'document compatibility mode' rule (for legacy IE browsers)-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!--End of 'document compatibility mode' rule (for legacy IE browsers)-->
+
+    <!--Start of viewport (visible web content area) rules-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--End of viewport (visible web content area) rules-->
+
+    <!--Start of page title (on browser tab, bookmarks, etc.)-->
+    <title>Rubrik | Interactive Assessment Rubrics for Professional English</title>
+    <!--End of page title (on browser tab, bookmarks, etc.)-->
+
+    <!--Start of favicon (icon on browser tab, bookmarks, etc.)-->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <!--End of favicon (icon on browser tab, bookmarks, etc.)-->
+
+    <!--Start of styles-->
+    <!--Start of initial view styles (for content above the fold)-->
+    <link rel="preload" href="css/shared/common.css" as="style"/>
+    <link rel="preload" href="css/partials/header.css" as="style"/>
+    <link rel="preload" href="css/partials/hero.css" as="style"/>
+    <link rel="preload" href="css/partials/rounded.css" as="style"/>
+    <link rel="preload" href="css/partials/toggle.css" as="style"/>
+    <link rel="preload" href="css/partials/tool.css" as="style"/>
+    <link rel="preload" href="css/partials/rubric.css" as="style"/>
+    <link rel="stylesheet" href="css/shared/common.css"/>
+    <link rel="stylesheet" href="css/partials/header.css"/>
+    <link rel="stylesheet" href="css/partials/hero.css"/>
+    <link rel="stylesheet" href="css/partials/rounded.css"/>
+    <link rel="stylesheet" href="css/partials/toggle.css"/>
+    <link rel="stylesheet" href="css/partials/tool.css"/>
+    <link rel="stylesheet" href="css/partials/rubric.css"/>
+    <!--End of initial view styles (for content above the fold)-->
+    <link rel="stylesheet" href="css/partials/self.css" />
+    <link rel="stylesheet" href="css/partials/peer.css" />
+    <link rel="stylesheet" href="css/partials/about.css" />
+    <link rel="stylesheet" href="css/partials/footer.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <!--End of styles-->
+
+    <!--Start of scripts-->
+    <!--https://javascript.info/script-async-defer-->
+    <script defer src="js/axios.js" ></script>
+    <script defer src="js/partials/header.js"></script>
+    <script defer src="js/pdfmake.min.js"></script>
+    <script defer src="js/vfs_fonts.min.js"></script>
+    <script defer src="js/partials/tool.js"></script>
+    <script async src="js/partials/toggle.js"></script>
+    <script async src="js/partials/about.js"></script>
+    <!--End of scripts-->
+
+</head>
+
+<body>
+    <!--Start of header-->
+    <%- include("partials/header") %>
+    <!--End of header-->
+
+    <!--Start of hero-->
+    <%- include("partials/hero") %>
+    <!--End of hero-->
+
+    <!--Start of rounded background-->
+    <div class="rounded-bg-1">
+        <div class="rounded-bg-2">
+            <div class="rounded-bg-3">
+                <!--Smooth scrolling-->
+                <div id="tool"></div>
+            </div>
+        </div>
+    </div>
+    <!--End of rounded background-->
+
+    <!--Start of toggle-->
+    <%- include("partials/toggle") %>
+    <!--End of toggle-->
+
+    <!--Start of tool-->
+    <%- include("partials/tool") %>
+    <!--End of tool-->
+
+    <!--Start of about-->
+    <%- include("partials/about") %>
+    <!--End of about-->
+
+    <!--Start of footer-->
+    <div class="rounded-bg-container-footer">
+        <div class="rounded-bg-1">
+            <div class="rounded-bg-2 rounded-bg-2-footer">
+                <div class="rounded-bg-3 rounded-bg-3-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("partials/footer") %>
+    <!--End of footer-->
+
+</body>
+</html>
