@@ -1,0 +1,156 @@
+/*
+Rubric:
+rubric-item [from partials/tool.css]
+    |__
+*/
+
+.check-understanding {
+    margin-bottom: 85px; /*handles space w/ prev/next*/
+}
+.challenge-plus-answers {
+    display: flex;
+    font-size: 15px;
+}
+.challenge-plus-answers img {
+    width: 230px;
+    align-self: flex-start; /*prevents stretching*/
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.challenge-plus-answers-col {
+    flex-direction: column;
+}
+.challenge-plus-answers-col img {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 12px;
+}
+.challenge-plus-answers-col-1150 {
+    flex-direction: column;
+}
+.challenge-plus-answers-col-1150 img {
+    margin-bottom: 12px;
+}
+.challenge-plus-answers-col-750 {
+    flex-direction: column;
+}
+.challenge-plus-answers-col-750 img {
+    width: 97.5%;
+    margin: auto;
+    margin-bottom: 12px;
+}
+.challenge-plus-answers-col .text-to-grade {
+    margin-bottom: 12px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+label.rubric-item-text {
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+.incorrect {
+    border: 1px solid #D24692;
+}
+.correct {
+    border: 1px solid #F6C96A;
+}
+.checkbox-area input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+.checkbox-area .checkmark {
+    border: 1px solid #A29BE6;
+    border-radius: 4px;
+    height: 13px;
+    width: 13px;
+    padding: 0;
+}
+.checkbox-area .checkmark img {
+    width: 8px;
+    margin: auto;
+    display: none;
+}
+label.rubric-item-text:hover .checkbox-area .checkmark {
+    transform: scale(1.05);
+}
+.checkbox-area input:checked ~ .checkmark img {
+    display: flex;
+}
+.challenge-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 85px; /*handles space w/ prev/next*/
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.challenge-actions div {
+    display: flex;
+}
+.challenge-actions div img {
+    width: 16px;
+    margin: auto;
+}
+.challenge-actions div img[alt="Star"] {
+    margin-right: 3.5px;
+}
+.challenge-answer span {
+    display: inline;
+    font-size: 11px;
+    background-color: #00000000;
+    border-bottom: 1px dotted #A29BE6;
+    color: #A29BE6;
+    border-radius: 0;
+    padding: 0;
+    margin-left: 4px;
+    visibility: hidden;
+}
+.challenge-result {
+    display: flex;
+    align-items: center;
+    font-family: GilroyRegular, sans-serif;
+    color: #F6C96A;
+    visibility: hidden;
+}
+.visible {
+    visibility: visible !important;
+}
+.challenge-retry, .challenge-submit {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: GilroyRegular, sans-serif;
+    color: #A29BE6;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 3.5px 14px;
+    border: 1px solid #A29BE6;
+    height: fit-content;
+}
+.what-to-grade-link {
+    border-bottom: 1px dotted #A29BE6;
+    color: #A29BE6;
+}
+.explanation {
+}
+.explanation-tooltip {
+    display: flex !important;
+    box-sizing: border-box !important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 6px !important;
+    /* background-color: #161629 !important; */
+    background-color: #1a1a30 !important;
+    width: 100% !important;
+    z-index: 3 !important;
+    padding: 5px 10px !important;
+    font-size: 12px !important;
+}
+.explanation:hover .explanation-tooltip {
+    visibility: visible;
+}

@@ -1,0 +1,113 @@
+/*
+Peer Assessment:
+   ... [here goes tool-container, from partials/tool.css]
+   [...]
+    |__ total score [awarded points / total points]
+    |__ rubric-item [from partials/tool.css, b/c it's shared with Assessment Rubric]
+            |__ rubric-item-text [professor's description -what should be]
+            |__ ...
+            |__ rubric-item-scores-container
+                    |__ rubric-item-scores
+                            |__ rubric-item-score [min score]
+                            |__ ...
+                            |__ rubric-item-score [max score]
+                    |__ rubric-item-score-description [min score -unskilled, max score -exemplary]
+            |__ rubric-item-justification [textarea to justify score given to peer group]
+    |__ ... [here goes change-content-container, from partials/tool.css]
+*/
+
+/*Start of total-score*/
+.total-score {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.total-score span {
+    position: relative;
+    top: 6px;
+    font-size: 10px;
+}
+#zero-to-ten-score {
+    margin-left: 4px;
+    top: 0;
+    font-size: 13px;
+    background-color: #1d1d36;
+    padding: 0 5px;
+    border-radius: 8px;
+}
+/*End of total-score*/
+
+/*Start of rubric-item-scores-container*/
+.rubric-item-scores-container {
+    display: flex;
+    margin: 5px 0;
+}
+/*End of rubric-item-scores-container*/
+
+
+/*Start of rubric-item-scores*/
+.rubric-item-scores {
+    display: flex;
+}
+/*End of rubric-item-scores*/
+
+/*Start of rubric-item-justification*/
+.rubric-item-justification {
+    margin: 0;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    margin-bottom: 85px; /*handles space b/w textarea & prev/next*/
+    /* margin-bottom: 40px; */
+    padding: 0;
+    border: none;
+    outline: none;
+    resize: none;
+    border-radius: 6px;
+    background-color: #22223f;
+    height: 40px;
+    height: 60px;
+    padding: 7px;
+    padding: 10px;
+    width: calc(100% - 20px);
+    color: #eee;
+    color: #bbb;
+    font-family: GilroyRegular, sans-serif;
+}
+.rubric-item-justification::placeholder {
+    color: #bbb;
+    color: #ccc;
+}
+/*End of rubric-item-justification*/
+
+.rubric-item-score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    margin-right: 4px;
+    cursor: pointer;
+    background-color: #2c2c4e;
+    font-family: GilroyRegular, sans-serif;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: 0.4s all;
+    color: #A29BE6;
+    border: 0.25px solid #2c2c4e;
+}
+.rubric-item-score:hover {
+    background-color: #292949;
+}
+.rubric-item-score-active {
+    background-color: #1d1d36 !important;
+}
+.rubric-item-score-description {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    color: #A29BE6;
+    font-size: 12px;
+    line-height: 20px;
+}
+/**/

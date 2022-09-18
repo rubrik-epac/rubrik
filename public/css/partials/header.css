@@ -1,0 +1,94 @@
+/*
+header [fixed, full-width background] && header-on-scroll [background color change on scroll]
+    |__ container [sets max width for content; from shared/common.css] && header-content [sets effective height of header]
+        |__ logo
+        |__ menu
+            |__ nav [smooth nav through page sections]
+            |__ auth [login]
+*/
+/*Start of header*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+.header-on-scroll {
+    background-color: #18182b86; /*set from header.js*/
+}
+/*End of header*/
+
+/*Start of header-content*/
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 min(8vw,128px); /*same left and right padding as hero*/
+    margin: 30px 0;
+}
+/*End of header-content*/
+
+/*Start of logo*/
+.header-content .logo a {
+    font-family: GilroySemiBold, Sans-Serif;
+    font-size: 18.4px;
+    color: #fff;
+}
+/*End of logo*/
+
+/*Start of menu*/
+.header-content .menu {
+    display: flex;
+}
+.header-content .menu a {
+    margin: 0 4.5em;
+}
+/*End of menu*/
+
+/*Start of nav*/
+.header-content .nav a:first-child {
+    margin-left: 0;
+}
+/*End of nav*/
+
+/*Start of auth*/
+.header-content .auth a {
+    font-family: GilroyRegular, Sans-Serif;
+    font-size: 15px;
+    border: 1px solid #A29BE6;
+    border-radius: 9px;
+    border-radius: 0.6em;
+    padding: 8px 16px;
+    padding: 10px 24px;
+}
+.header-content .auth a:last-child {
+    margin-right: 0;
+}
+.header-content .auth a:hover {
+    color: #fdfdfd;
+}
+/*End of auth*/
+
+/*Start of media queries*/
+@media (max-width: 1150px) {
+    #nav-1 {
+        display: none;
+    }
+}
+@media (max-width: 920px) {
+    #nav-3  {
+        display: none;
+    }
+}
+@media (max-width: 670px) {
+    #nav-2  {
+        display: none;
+    }
+}
+/*End of media queries*/

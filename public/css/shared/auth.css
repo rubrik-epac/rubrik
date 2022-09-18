@@ -1,0 +1,291 @@
+/*
+register [validation passed]:
+
+container [sets max width for content; from shared/common.css]
+    |__ auth-container [sets same starting point (same distance from page top to content)
+        for register/login/reset-password screens, even if different form heights on desktop;
+        centers it vertically on shorter devices (height media query)]
+                |__ auth-welcome
+                |__ auth-msg
+                |__ auth-form
+                        |__ auth-row-group [flex-direction: row]
+                                |__ select [assessment option]
+                                |__ select [professor]
+                        |__ auth-row-group
+                                |__ select [challenge]
+                                |__ select [group]
+                        |__ auth-group [for email] [flex-direction: column]
+                        |__ ...
+                        |__ auth-group [for password]
+                        |__ auth-group [to register]
+                        |__ auth-row-group && centered [log in instead]
+_______________________________________________________________________
+register [validation not passed]:
+
+container
+    |__ auth-container
+                |__ auth-welcome
+                |__ auth-msg
+                |__ auth-form
+                        |__ auth-info && auth-error
+                        |__ auth-group [for email]
+                        |__ ...
+                        |__ auth-group [for password]
+                        |__ auth-group [to register]
+                        |__ auth-row-group && centered [log in instead]
+_______________________________________________________________________
+login:
+
+container
+    |__ auth-container
+                |__ auth-welcome
+                |__ auth-msg
+                |__ auth-form
+                        |__ auth-info
+                        |__ auth-group [for email]
+                        |__ auth-group [for password]
+                        |__ auth-group [to log in]
+                        |__ auth-row-group && centered [sign up instead] [except for professors -plogin]
+                        |__ auth-row-group && centered [reset password instead]
+_______________________________________________________________________
+reset password:
+
+container
+    |__ auth-container
+                |__ auth-welcome
+                |__ auth-msg
+                |__ auth-form
+                        |__ auth-info
+                        |__ auth-group [for email]
+                        |__ auth-group [to reset]
+                        |__ auth-row-group && centered [sign up instead] [except for professors -preset-password]
+*/
+/*Start of auth-container*/
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 710px;
+    padding: 30px 0;
+    width: 100%;
+}
+/*End of auth-container*/
+
+/*Start of auth-welcome && h1*/
+.auth-welcome {
+    display: flex;
+}
+.auth-welcome h1 span {
+    padding: 0 5px 0 12px;
+}
+/*End of auth-welcome && h1*/
+
+/*Start of auth-msg*/
+.auth-msg {
+    text-align: center;
+    max-width: 375px;
+    margin: 12px 0 15px 0;
+}
+/*End of auth-msg*/
+
+/*Start of auth-form*/
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 26px min(3.25vw,40px);
+    border: 3px solid #242247;
+    border-radius: 12px;
+    width: 274px;
+}
+/*End of auth-form*/
+
+/*Start of auth-row-group && centered*/
+.auth-row-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    font-size: 13px;
+}
+.auth-row-group.centered {
+    margin-top: 10px;
+}
+.auth-row-group select {
+    width: 50%;
+    outline: none;
+    padding: 6px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s all;
+    margin: 0 5px 10px 5px;
+    background-color: #A29BE6;
+    border-color: #4b4586;
+}
+.auth-row-group select:first-child {
+    margin-left: 0;
+}
+.auth-row-group select:last-child {
+    margin-right: 0;
+}
+.auth-row-group select:hover {
+    background-color: #9992dd;
+}
+.auth-row-group a {
+    margin-left: 3px;
+    margin-bottom: 0.5px;
+}
+.auth-row-group .do-instead {
+    border-bottom: 0.5px solid #1b173500;
+}
+.auth-row-group .do-instead:hover {
+    border-color: #A29BE6;
+}
+.centered {
+    justify-content: center;
+}
+/*End of auth-row-group && centered*/
+
+/*Start of auth-group*/
+.auth-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.auth-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+.auth-group label img {
+    width: 15px;
+    margin-right: 4px;
+}
+.auth-group label .info {
+    position: relative;
+    top: -5px;
+    margin-left: 2.5px;
+    border: 1px solid #F6E08F;
+    font-size: 7px;
+    font-family: GilroyMedium, Sans-Serif;
+    border-radius: 50%;
+    color: #F6E08F;
+    padding: 0.4px 4px;
+    cursor: pointer;
+}
+.auth-group label .info .tooltip {
+    position: absolute;
+    top: 0;
+    right: -44px;
+    width: 40px;
+    font-size: 8px;
+    opacity: 0; /*for transition (no transition on visibility)*/
+    visibility: hidden; /*to hide (opacity 0 still renders it - can interact with hover, e.g.-, just not initially visible)*/
+    transition: 0.4s opacity;
+}
+.auth-group label .info:hover .tooltip,
+.auth-group label .info:active .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+.auth-group input[type="email"],
+.auth-group input[type="password"] {
+    background-color: #FAFAFA;
+    border: 2px solid #4b4586;
+    border-radius: 0.5em;
+    padding: 8px 10px;
+    margin-bottom: 1em;
+    color: #121212;
+    outline: none;
+}
+.auth-group input[type="email"]:focus,
+.auth-group input[type="password"]:focus {
+    background-color: #A29BE6;
+    transition: 0.1s all;
+}
+/* .auth-group input.dirty {
+    background-color: #A29BE6;
+} */
+.auth-group input.error {
+    background-color: #e45b8210;
+    border: 2px solid #E45B82;
+}
+.auth-group input.error::placeholder {
+    font-family: GilroyRegular, sans-serif;
+    color: rgb(221, 215, 215) !important;
+    font-size: 12px;
+}
+.auth-group input[type="email"]:disabled {
+    background-color: #121212;
+    background-color: #1212125b;
+}
+.auth-group input::placeholder {
+    font-size: 12px;
+    color: rgb(34, 33, 33) !important;
+}
+.auth-group a {
+    margin-bottom: 0.5px;
+}
+.auth-group .auth-btn {
+    text-align: center;
+    background-color: #A29BE6;
+    padding: 10px;
+    border-radius: 0.5em;
+    font-family: GilroyMedium, Sans-Serif;
+    color: #121212;
+    margin: 5.5px 0;
+}
+.auth-group .auth-btn:hover {
+    background-color: #9992dd;
+    color: #121212;
+}
+/*End of auth-group*/
+
+/*Start of auth-info && auth-error*/
+.auth-info {
+    text-align: center;
+    border-radius: 8px;
+    padding: 2px;
+    font-size: 13px;
+    border: 1px solid #575191;
+    line-height: 22px;
+    margin-bottom: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.auth-error {
+    border-color: #E45B82;
+}
+/*End of auth-info && auth-error*/
+
+/*Start of browser specific rules*/
+@-moz-document url-prefix() {
+    input::placeholder {
+        opacity: 1;
+    }
+}
+/*End of browser specific rules*/
+
+/*Start of media queries*/
+@media (max-width: 1180px) {
+    .auth-welcome h1 {
+        font-size: 38px;
+    }
+}
+@media (max-width: 380px) {
+    .auth-group label .info .tooltip {
+        top: -12.5px;
+        right: -8px;
+    }
+}
+@media (max-width: 340px) {
+    .auth-form {
+        width: 80%;
+    }
+}
+@media (max-height: 840px) {
+    /*Reminder. Height media query*/
+    .auth-container {
+        min-height: auto;
+    }
+}
+/*End of media queries*/

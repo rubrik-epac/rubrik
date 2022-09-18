@@ -1,0 +1,161 @@
+@font-face {
+    font-family: GilroyLight;
+    src: url("../../fonts/Gilroy-Light.woff2");
+}
+@font-face {
+    font-family: GilroyRegular;
+    src: url("../../fonts/Gilroy-Regular.woff2");
+}
+@font-face {
+    font-family: GilroyMedium;
+    src: url("../../fonts/Gilroy-Medium.woff2");
+}
+@font-face {
+    font-family: GilroySemiBold;
+    src: url("../../fonts/Gilroy-SemiBold.woff2");
+}
+/* Default values of HTML elements */
+/* https://www.w3schools.com/cssref/css_default_values.asp */
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #2A254D;
+    color: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: GilroyLight, Sans-Serif;
+    font-size: 16px;
+    min-height: 100vh;
+    overflow-x: hidden;
+    user-select: none; /*avoid text selection if quick double click (e.g. on Previous/Next)*/
+    -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);  /*disable blue hightlight after tap on mobile*/
+}
+html {
+    scroll-behavior: smooth;
+}
+.container {
+    width: 100%;
+    max-width: 1500px;
+}
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #fdfdfd;
+    transition: 0.2s all;
+    font-family: GilroyRegular, Sans-Serif;
+}
+a:hover {
+    color: #d4d1ec;
+}
+a span {
+    position: relative;
+    top: -8px;
+    margin-left: 4px;
+    padding: 3px 4px;
+    border-radius: 5px;
+    background-color: #A29BE6;
+    color: #18182B;
+    font-size: 11px;
+}
+h1 {
+    font-family: GilroyMedium, Sans-Serif;
+    font-size: 48px;
+    word-spacing: 1.5px;
+    font-weight: normal;
+    margin: 0;
+    transition: 0.2s margin;
+}
+h1 span {
+    color: #A29BE6;
+}
+h2 {
+    font-family: GilroyLight, Sans-Serif;
+    font-size: 18.4px;
+    color: #f3f3f3;
+    line-height: 30px;
+    margin: 16px 0 0 0;
+    transition: 0.2s margin;
+}
+.hidden {
+    display: none !important;
+}
+
+/*Start of media queries*/
+@media (max-width: 1600px) {
+    h1 {
+        /* gradual font-size reduction:
+           current font size: 48px
+           target font size at 1360px width: 41px
+           @1600px, 48px - (1600-1600) * 0.029 = 48px
+           @1360px, 48px - (1600-1360) * 0.029 = 41(ish)px
+        */
+        /*0.029 =(ish) (48px - 41px) / (1600px - 1360px)*/
+        font-size: calc(48px - (1600px - 100vw) * 0.029);
+    }
+    h2 {
+        /*0.0058 =(ish) (18.4px - 17px) / (1600px - 1360px)*/
+        font-size: calc(18.4px - (1600px - 100vw) * 0.0058);
+    }
+    .content {
+        font-size: min(16px, calc(18.4px - (1600px - 100vw) * 0.0058));
+    }
+}
+@media (max-width: 1360px) {
+    h1 {
+        /*0.017 =(ish) (41px - 38px) / (1360px - 1180px)*/
+        font-size: calc(41px - (1360px - 100vw) * 0.017);
+    }
+    h2 {
+        /*0.0055 =(ish) (17px - 16px) / (1360px - 1180px)*/
+        font-size: calc(17px - (1360px - 100vw) * 0.0055);
+    }
+    .content {
+        font-size: min(16px, calc(17px - (1360px - 100vw) * 0.0055));
+    }
+}
+@media (max-width: 1180px) {
+    h1 {
+        /*0.022 =(ish) (38px - 35px) / (1180px - 1045px)*/
+        font-size: calc(38px - (1180px - 100vw) * 0.022);
+    }
+    h2 {
+        /*0.0037 =(ish) (16px - 15.5px) / (1180px - 1045px)*/
+        font-size: calc(16px - (1180px - 100vw) * 0.0037);
+    }
+    .content {
+        font-size: min(16px, calc(16px - (1180px - 100vw) * 0.0037));
+    }
+}
+@media (max-width: 1045px) {
+    h1 {
+        /*0.0348 =(ish) (35px - 31px) / (1045px - 930px)*/
+        font-size: calc(35px - (1045px - 100vw) * 0.0348);
+    }
+    h2 {
+        /*0.0086 =(ish) (15.5px - 14.5px) / (1045px - 930px)*/
+        font-size: calc(15.5px - (1045px - 100vw) * 0.0086);
+    }
+    .content {
+        font-size: min(16px, calc(15.5px - (1045px - 100vw) * 0.0086));
+    }
+}
+@media (max-width: 820px) {
+    h1 {
+        font-size: 35px;
+    }
+    h2 {
+        font-size: 15.5px;
+    }
+    .content {
+        font-size: 14px;
+    }
+}
+@media (max-width: 400px) {
+    .content {
+        font-size: 12px;
+    }
+}
+/*End of media queries*/

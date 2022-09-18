@@ -1,0 +1,152 @@
+/*
+container [sets max width for content; from shared/common.css]
+    |__ toggle-container [positions toggle relative to hero]
+            |__ h1 [from shared/common.css]
+            |__ h1 [from shared/common.css] [toggle-text-2]
+            |__ toggle
+                  |__ toggle-bg [moving border]
+                  |__ toggle-option [pentachart] [a inside, one of which toggle-active]
+                  |__ toggle-option [r. proposal]
+                  |__ toggle-option [presentation]
+*/
+
+/*Start of toggle-container*/
+.toggle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+    position: relative;
+    top: -605px;
+    margin-bottom: -605px;
+}
+/*End of toggle-container*/
+
+/*Start of h1*/
+.toggle-container h1 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.toggle-text-2 {
+    color: #A29BE6;
+}
+/*End of h1*/
+
+/*Start of toggle*/
+.toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 9px 14px;
+    margin-top: 16px;
+    background-color: #2A254D;
+    border: 1.5px solid #1b1735;
+    /* border: 1.5px solid #2A254D; */
+    /* border: 1.5px solid #9992dd; */
+    border-radius: 30px;
+    z-index: 2;
+}
+/*End of toggle*/
+
+/*Start of toggle-bg*/
+.toggle-bg {
+    width: 23%;
+    position: absolute;
+    left: 3.6%;
+    padding: 7px 15px;
+    border-radius: 14px;
+    border: 1px solid #9992dd;
+    transition: 0.7s left;
+}
+/*End of toggle-bg*/
+
+/*Start of toggle-option*/
+.toggle-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 140px;
+    cursor: pointer;
+}
+.toggle-option a {
+    color: #ccc;
+    padding: 7px 0;
+    z-index: 2;
+    margin: 0 2px;
+    transition: 0.7s color;
+}
+.toggle-option a span {
+    background-color: #1b1735;
+    color: #eee;
+    transition: 0.7s all;
+}
+.toggle-active {
+    font-family: GilroyMedium, sans-serif;
+}
+/*End of toggle-option*/
+
+/*Start of media queries*/
+@media (max-width: 1600px) {
+    /* gradual reduction:
+           current width: 140px
+           target width at 1360px width: 130px
+           @1600px, 140px - (1600-1600) * 0.0416 = 140px
+           @1360px, 140px - (1600-1360) * 0.0416 = 130(ish)px
+    */
+    .toggle-option {
+        /*0.0416 =(ish) (140px - 130px) / (1600px - 1360px)*/
+        width: calc(140px - (1600px - 100vw) * 0.0416);
+    }
+}
+@media (max-width: 1360px) {
+    .toggle {
+        padding: 9px 12px;
+    }
+    .toggle-option {
+        /*0.0277 =(ish) (130px - 125px) / (1360px - 1180px)*/
+        width: calc(130px - (1360px - 100vw) * 0.0277);
+    }
+    .toggle-bg {
+        /*0.00166 =(ish) (3.4% - 3.1%) / (1360px - 1180px)*/
+        left: calc(3.4% - (1360px - 100vw) * 0.00166);
+    }
+}
+@media (max-width: 1180px) {
+    .toggle {
+        padding: 8px 12px;
+    }
+}
+@media (max-width: 1045px) {
+    .toggle {
+        padding: 7px 12px;
+    }
+}
+@media (max-width: 750px) {
+    .toggle-option {
+        width: 114px;
+    }
+}
+@media (max-width: 400px) {
+    .toggle-option {
+        width: 90px;
+    }
+    .toggle-bg {
+        width: 22%;
+        border-radius: 14px;
+        padding: 5px 15px;
+        left: 2.4%;
+    }
+    .toggle-option span {
+        margin-left: 1px;
+        font-size: 9px;
+    }
+}
+@media (max-width: 320px) {
+    .toggle-option {
+        width: 85px;
+    }
+}
+/*End of media queries*/

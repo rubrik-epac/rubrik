@@ -1,1 +1,19 @@
-
+/*small fixes to partials for index.css
+(not common to other pages where
+partials may be used)*/
+.rounded-bg-1 {
+    top: -4px;
+}
+.rounded-bg-container-footer {
+    height: 200px;
+    overflow: hidden;
+    padding-top: 30px;
+    position: relative;
+    top: -30px; /*must match or exceed padding-top*/
+}
+.rounded-bg-2-footer {
+    background-color: #242247;
+}
+.rounded-bg-3-footer {
+    background-color: #2A254D;
+}

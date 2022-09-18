@@ -1,0 +1,81 @@
+/*
+about [full-width background]
+    |__ container [sets max width for content; from shared/common.css] && about-container [centers content & sets margin-top to see h1 on scroll scrolling]
+            |__ h1 [title]
+            |__ about-content [matches .tool width. Could do away with container]
+                    |__ 
+*/
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #242247;
+    width: 100vw;
+    font-size: 15px;
+    padding-bottom: 85px;
+}
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+}
+.about-container h1 {
+    text-align: center;
+}
+.about-container .h1-text-2 {
+    margin-bottom: 30px;
+    transform: scale(0.95);
+}
+.about-content {
+    display: flex;
+    flex-direction: column;
+    width: min(1050px,85vw); /*same as .tool*/
+}
+.about-question {
+    /*wrapper not flex for
+    accordion effect*/
+    background-color: #1d1d36;
+    cursor: pointer;
+    padding: 20px;
+}
+.about-question-container {
+    /*make the inner container
+    flex instead*/
+    display: flex;
+    justify-content: space-between;
+}
+.about-question-text {
+    display: flex;
+    align-items: center;
+}
+.about-question-icon {
+    display: flex;
+    align-items: center;
+    padding: 1px 6px;
+}
+.about-question-icon img {
+    transition: 0.4s transform;
+}
+.about-answer {
+    /*wrapper not flex for
+    accordion effect*/
+    padding: 0 20px;
+    border-left: 0.5px solid #1d1d36;
+    border-right: 0.5px solid #1d1d36;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s all ease-out;
+    line-height: 30px;
+    background-color: #21213d;
+}
+.about-answer-container {
+     /*make the inner container
+    flex instead*/
+    display: flex;
+}
+@media (max-width: 326px) {
+    .about-container {
+        margin-top: 55px;
+    }
+}
