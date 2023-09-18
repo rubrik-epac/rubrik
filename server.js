@@ -1,4 +1,4 @@
-// 1. development vs production
+// development vs. production
 if (process.env.NODE_ENV === "production") {
   console.log("Node Environment: Production.");
 } else {
@@ -6,7 +6,7 @@ if (process.env.NODE_ENV === "production") {
   require("dotenv").config();
 }
 
-// 2. environment variables
+// environment variables
 const sessionSecret = process.env.SESSION_SECRET;
 const mongoDBURI = process.env.MONGODB_URI;
 const rubrikEmail = process.env.RUBRIK_EMAIL;
@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === "production") {
 }
 let resetPwdHourWindow = process.env.RESET_PWD_HOUR_WINDOW;
 
-// 3. require
+// require
 const express = require("express");
 const mongoose = require("mongoose");
 const helmet = require("helmet");
@@ -29,24 +29,34 @@ const passport = require("passport");
 const nodemailer = require("nodemailer");
 const LocalStrategy = require("passport-local").Strategy;
 const session = require("cookie-session");
-const writeGood = require("write-good");
 const wordCount = require("wordcount");
 const validator = require("email-validator");
 const randomToken = require("random-token");
 const moment = require("moment");
 const fs = require("fs"); // does not require npm i fs
- 
-// 4. app
+
+// app
 const app = express();
+// allow all Grammarly related requests
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'", "https://f-log-js-plugin.grammarly.io", "https://apps-public.grammarly.com", "https://tokens.grammarly.com", "https://gnar.grammarly.com", "wss://capi.grammarly.com"],
+      scriptSrc: ["'self'", "https://cdn.jsdelivr.net", "https://js.grammarly.com"],
+      imgSrc: ["'self'", "https://assets.grammarly.com"]
+    }
+  },
+}));
+// set COEP directive to "credentialless"
+app.use(helmet.crossOriginEmbedderPolicy({ policy: "credentialless" }));
 app.enable("trust proxy");
 app.set("view engine", "ejs");
-app.use(helmet());
 app.use(express.json());
 app.use(express.static("public"));
 app.use(
   session({
     secret: sessionSecret,
-    resave: true,
+    resave: true  ,
     saveUninitialized: true,
   })
 );
@@ -1066,7 +1076,7 @@ app.post("/submit-activity", (req, res) => {
   }
 });
 
-// self-assessment
+// quality check
 app.post("/analyze-text", (req, res) => {
   let errors = {};
    try {
@@ -1086,70 +1096,142 @@ app.post("/analyze-text", (req, res) => {
     }
     else {
       // 3. replace ’ with ' (some phones use ’ while contractions.json uses ')
-      // textBoxContent = textBoxContent.replaceAll("’", "'");
+      textBoxContent = textBoxContent.replaceAll("’", "'");
       // 4. analyze textBoxContent
-      // https://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/
-      let writeGoodSuggestions = writeGood(textBoxContent, { passive: false, adverb: false, illusion: false });
-      let unnecessaryWordCount = 0;
-      let weaselWordCount = 0;
-      let informalStartCount = 0;
-      let clicheCount = 0;
-      for (let writeGoodSuggestion of writeGoodSuggestions) {
-        let reason = writeGoodSuggestion.reason;
-        if (reason.includes(`"So" adds no meaning`)) {
-          informalStartCount += 1;
-        }
-        if (reason.includes(`"There is" is unnecessary verbiage`)) {
-          informalStartCount += 1;
-        }
-        if (reason.includes(`"There are" is unnecessary verbiage`)) {
-          informalStartCount += 1;
-        }
-        if (reason.includes(`is a weasel word`)) {
-          weaselWordCount += 1;
-        }
-        if (reason.includes(`is wordy or unneeded`)) {
-          unnecessaryWordCount += 1;
-        }
-        if (reason.includes(`cliche`)) {
-          clicheCount += 1;
-        }
-      }
       // https://www.w3schools.com/jsref/jsref_obj_regexp.asp
-      let IPattern = /\bI\b/g;
-      let myPattern = /\bmy\b/ig;
-      let mePattern = /\bme\b/ig;
-      let youPattern = /\byou\b/ig;
-      let yourPattern = /\byour\b/ig;
-      let IInstances= textBoxContent.match(IPattern);
-      let myInstances = textBoxContent.match(myPattern);
-      let meInstances = textBoxContent.match(mePattern);
-      let youInstances = textBoxContent.match(youPattern); // e.g. [ 'You', 'you' ]
-      let yourInstances = textBoxContent.match(yourPattern);
       let count = wordCount(textBoxContent);
-      // https://en.wikipedia.org/wiki/Wikipedia:List_of_English_contractions
-      let contractionMatches = new Set();
-      let jsonData = JSON.parse(fs.readFileSync('contractions.json', 'utf8'));
-      for (let id of Object.keys(jsonData)) {
-        let pattern = new RegExp("\\b" + id + "\\b", "gi");
-        let match = textBoxContent.match(pattern);
-        if (match != null) {
-          contractionMatches.add(match);
+      
+      // In-text citations
+      let citationPattern1 = /\((?:[A-Za-z]+\s*,\s*\d+\))/ig; // APA
+      let citationPattern2 = /(?:[A-Za-z]+\s*\(\d+\))/ig; // APA
+      let citationPattern3 = /(?:In\s+\d+,\s*[A-Za-z]+)/ig; // APA
+      let citationPattern4 = /\[\d+\]/ig; // IEEE
+      let citationsPatterns = new Array(citationPattern1, citationPattern2, citationPattern3, citationPattern4);
+      let citationMatches = new Array();
+      for (let citationPattern of citationsPatterns) {
+        let matches = textBoxContent.match(citationPattern);
+        if (matches != null) {
+          matches.forEach(match => citationMatches.push(match));
         }
       }
+
+      // Good readability - sentences
+      let longSentences = new Array();
+      let shortSentences = new Array();
+      let improperSentencesCount = 0;
+      let sentences = textBoxContent.split('. ');
+      for (let sentence of sentences) {
+        let words = sentence.split(' ');
+        let wordCount = words.length;
+        if (wordCount > 35) {
+          longSentences.push(sentence);
+        }
+        if (wordCount < 20){
+          shortSentences.push(sentence);
+        }
+        improperSentencesCount = longSentences.length + shortSentences.length;
+      }
+      
+      // Good readability - paragraphs
+      let longParagraphs = new Array();
+      let shortParagraphs = new Array();
+      let improperParagraphsCount = 0;
+      let paragraphs = textBoxContent.split('\n\n');
+      for (let paragraph of paragraphs) {
+        let sentenceCount = sentences.length;
+        if (sentenceCount > 6) {
+          longParagraphs.push(paragraph);
+        }
+        if (sentenceCount < 3) {
+          shortParagraphs.push(paragraph);
+        }
+        improperParagraphsCount = longParagraphs.length + shortParagraphs.length;
+      }
+
+      // Personal style
+      let pronounMatches = new Array();
+      let jsonData1 = JSON.parse(fs.readFileSync('personal-pronouns.json', 'utf8'));
+      for (let pronoun of Object.keys(jsonData1)) {
+        let pattern = new RegExp("\\b" + pronoun + "\\b", "gi");
+        let matches = textBoxContent.match(pattern);
+        if (matches != null) {
+          matches.forEach(match => pronounMatches.push(match));
+        }
+      }
+
+      // Colloquialisms
+      let colloquialismMatches = new Array();
+      let jsonData2 = JSON.parse(fs.readFileSync('colloquialisms.json', 'utf8'));
+      for (let slang of Object.keys(jsonData2)) {
+        let pattern = new RegExp("\\b" + slang + "\\b", "gi");
+        let matches = textBoxContent.match(pattern);
+        if (matches != null) {
+          matches.forEach(match => colloquialismMatches.push(match));
+        }
+      }
+      
+      // https://en.wikipedia.org/wiki/Wikipedia:List_of_English_contractions
+      // Contractions
+      let contractionMatches = new Array();
+      let jsonData3 = JSON.parse(fs.readFileSync('contractions.json', 'utf8'));
+      for (let contraction of Object.keys(jsonData3)) {
+        let pattern = new RegExp("\\b" + contraction + "\\b", "gi");
+        let matches = textBoxContent.match(pattern);
+        if (matches != null) {
+          matches.forEach(match => contractionMatches.push(match));
+        }
+      }
+
+      // Phrasal verbs
+      let phrasalVerbMatches = new Array();
+      let jsonData4 = JSON.parse(fs.readFileSync('phrasal-verbs.json', 'utf8'));
+      for (let phrasalVerb of Object.keys(jsonData4)) {
+        let pattern = new RegExp("\\b" + phrasalVerb + "\\b", "gi");
+        let matches = textBoxContent.match(pattern);
+        if (matches != null) {
+          matches.forEach(match => phrasalVerbMatches.push(match));
+        }
+      }
+
+      // Informal connectors
+      let informalConnectorMatches = new Array();
+      let jsonData5= JSON.parse(fs.readFileSync('informal-connectors.json', 'utf8'));
+      for (let informalConnector of Object.keys(jsonData5)) {
+        let pattern = new RegExp("\\b" + informalConnector + "\\b", "gi");
+        let matches = textBoxContent.match(pattern);
+        if (matches != null) {
+          matches.forEach(match => informalConnectorMatches.push(match));
+        }
+      }
+
+      // https://academicmarker.com/academic-guidance/vocabulary/tentative-language/what-are-the-different-types-of-tentative-language/
+      // Tentative language
+      let tentativeMatches = new Array();
+      let jsonData6 = JSON.parse(fs.readFileSync('tentative.json', 'utf8'));
+      for (let tentative of Object.keys(jsonData6)) {
+        let pattern = new RegExp("\\b" + tentative + "\\b", "gi");
+        let matches = textBoxContent.match(pattern);
+        if (matches != null) {
+          matches.forEach(match => tentativeMatches.push(match));
+        }
+      }
+
+      // Print final analysis on console
       let analysisFinalResult = {
           wordCount: count,
-          writeGoodSuggestions: writeGoodSuggestions,
-          unnecessaryWordCount: unnecessaryWordCount,
-          informalStartCount: informalStartCount,
-          weaselWordCount: weaselWordCount,
-          clicheCount: clicheCount,
-          IInstances: IInstances,
-          myInstances: myInstances,
-          meInstances: meInstances,
-          youInstances: youInstances,
-          yourInstances: yourInstances,
-          contractionMatches: Array.from(contractionMatches)
+          pronounMatches: pronounMatches,
+          colloquialismMatches: colloquialismMatches,
+          phrasalVerbMatches: phrasalVerbMatches,
+          informalConnectorMatches: informalConnectorMatches,
+          contractionMatches: contractionMatches,
+          shortSentences: shortSentences,
+          longSentences: longSentences,
+          improperSentencesCount: improperSentencesCount,
+          shortParagraphs: shortParagraphs,
+          longParagraphs: longParagraphs,
+          improperParagraphsCount: improperParagraphsCount,
+          tentativeMatches: tentativeMatches,
+          citationMatches: citationMatches
       }
       console.log("Analyze text. Result:");
       console.log(analysisFinalResult);
