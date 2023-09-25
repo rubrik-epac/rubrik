@@ -1096,7 +1096,7 @@ app.post("/analyze-text", (req, res) => {
     }
     else {
       // 3. replace ’ with ' (some phones use ’ while contractions.json uses ')
-      textBoxContent = textBoxContent.replaceAll(/’/g, "'");
+      textBoxContent = textBoxContent.replace(/’/g, "'");
       // 4. analyze textBoxContent
       // https://www.w3schools.com/jsref/jsref_obj_regexp.asp
       let count = wordCount(textBoxContent);
