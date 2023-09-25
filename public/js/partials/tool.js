@@ -825,16 +825,20 @@ function toolReady() {
                                     let improperSentencesCount = response.data.success.improperSentencesCount;
                                     let improperParagraphsCount = response.data.success.improperParagraphsCount;
                                     for (longSentence of longSentences) {
-                                        textBoxContent = textBoxContent.replaceAll(longSentence, '<span class="long-sentence-warning"  data-hover="Warning: this sentence is too long\nA typical academic sentence is 20-35 words, and\nhas a main clause and 1-2 subordinate clauses">' + longSentence + '</span>');
-                                    }
+                                        const regex = new RegExp(longSentence, 'g');
+                                        textBoxContent = textBoxContent.replace(regex, '<span class="long-sentence-warning"  data-hover="Warning: this sentence is too long\nA typical academic sentence is 20-35 words, and\nhas a main clause and 1-2 subordinate clauses">' + longSentence + '</span>');
+                                      }
                                     for (shortSentence of shortSentences) {
-                                        textBoxContent = textBoxContent.replaceAll(shortSentence, '<span class="short-sentence-warning" data-hover="Warning: this sentence is too short\nA typical academic sentence is 20-35 words, and\nhas a main clause and 1-2 subordinate clauses">' + shortSentence + '</span>');
+                                        const regex = new RegExp(shortSentence, 'g');
+                                        textBoxContent = textBoxContent.replace(regex, '<span class="short-sentence-warning" data-hover="Warning: this sentence is too short\nA typical academic sentence is 20-35 words, and\nhas a main clause and 1-2 subordinate clauses">' + shortSentence + '</span>');
                                     }
-                                    for (longParagraphs of longParagraphs) {
-                                        textBoxContent = textBoxContent.replaceAll(longParagraph, '<span class="long-paragraph-warning"  data-hover="Warning: this paragraph is too long\nA typical academic paragraph is 3-6 sentences">' + longParagraph + '</span>');
+                                    for (longParagraph of longParagraphs) {
+                                        const regex = new RegExp(longParagraph, 'g');
+                                        textBoxContent = textBoxContent.replace(regex, '<span class="long-paragraph-warning"  data-hover="Warning: this paragraph is too long\nA typical academic paragraph is 3-6 sentences">' + longParagraph + '</span>');
                                     }
                                     for (shortParagraph of shortParagraphs) {
-                                        textBoxContent = textBoxContent.replaceAll(shortParagraph, '<span class="short-paragraph-warning" data-hover="Warning: this paragraph is too short\nA typical academic paragraph is 3-6 sentences">' + shortParagraph + '</span>');
+                                        const regex = new RegExp(shortParagraph, 'g');
+                                        textBoxContent = textBoxContent.replace(regex, '<span class="short-paragraph-warning" data-hover="Warning: this paragraph is too short\nA typical academic paragraph is 3-6 sentences">' + shortParagraph + '</span>');
                                     }
                                     textBox.innerHTML = textBoxContent;
                                     if (improperSentencesCount > 0 && improperParagraphsCount == 0) {
@@ -889,7 +893,8 @@ function toolReady() {
                                     let noContractionsTooltip = document.getElementById("no-contractions-tooltip");
                                     let contractionCount = contractions.length;
                                     for (contraction of contractions) {
-                                        textBoxContent = textBoxContent.replaceAll(contraction, '<span class="highlighted-error" data-hover="Error: use of\ncontractions">' + contraction + '</span>');
+                                        const regex = new RegExp(contraction, 'g');
+                                        textBoxContent = textBoxContent.replace(regex, '<span class="highlighted-error" data-hover="Error: use of\ncontractions">' + contraction + '</span>');
                                     }
                                     textBox.innerHTML = textBoxContent;
                                     if (contractionCount > 0) {
@@ -923,7 +928,8 @@ function toolReady() {
                                     let tentativeTooltip = document.getElementById("tentative-language-tooltip");
                                     let tentativeCount = tentatives.length;
                                     for (tentative of tentatives) {
-                                        textBoxContent = textBoxContent.replaceAll(tentative, '<span class="highlighted-correct" data-hover="Correct: use of \ntentative expressions">' + tentative + '</span>');
+                                        const regex = new RegExp(tentative, 'g');
+                                        textBoxContent = textBoxContent.replace(regex, '<span class="highlighted-correct" data-hover="Correct: use of \ntentative expressions">' + tentative + '</span>');
                                     }
                                     textBox.innerHTML = textBoxContent;
                                     if (tentativeCount > 0) {
@@ -957,7 +963,8 @@ function toolReady() {
                                     let noPersonalPronounsTooltip = document.getElementById("no-personal-style-tooltip");
                                     let pronounCount = pronouns.length;
                                     for (pronoun of pronouns) {
-                                        textBoxContent = textBoxContent.replaceAll(pronoun, '<span class="highlighted-error" data-hover="Error: use of \npersonal style">' + pronoun + '</span>');
+                                        const regex = new RegExp(pronoun, 'g');
+                                        textBoxContent = textBoxContent.replace(regex, '<span class="highlighted-error" data-hover="Error: use of \npersonal style">' + pronoun + '</span>');
                                     }
                                     textBox.innerHTML = textBoxContent;
                                     if (pronounCount > 0) {
@@ -990,7 +997,8 @@ function toolReady() {
                                     let inTextCitationsTooltip = document.getElementById("in-text-citations-tooltip");
                                     let citationCount = citations.length;
                                     for (citation of citations) {
-                                        textBoxContent = textBoxContent.replaceAll(citation, '<span class="highlighted-correct" data-hover="Correct: use of \nin-text citations">' + citation + '</span>');
+                                        const regex = new RegExp(citation, 'g');
+                                        textBoxContent = textBoxContent.replace(regex, '<span class="highlighted-correct" data-hover="Correct: use of \nin-text citations">' + citation + '</span>');
                                     }
                                     textBox.innerHTML = textBoxContent;
                                     if (citationCount > 0) {
@@ -1028,7 +1036,8 @@ function toolReady() {
                                     let noColloquialismsTooltip = document.getElementById("no-colloquialisms-tooltip");
                                     let colloquialismCount = colloquialisms.length;
                                     for (colloquialism of colloquialisms) {
-                                        textBoxContent = textBoxContent.replaceAll(colloquialism, '<span class="highlighted-error" data-hover="Error: use of \ncolloquial expressions">' + colloquialism + '</span>');
+                                        const regex = new RegExp(colloquialism, 'g');
+                                        textBoxContent = textBoxContent.replace(regex, '<span class="highlighted-error" data-hover="Error: use of \ncolloquial expressions">' + colloquialism + '</span>');
                                     }
                                     textBox.innerHTML = textBoxContent;
                                     if (colloquialismCount > 0) {
@@ -1060,7 +1069,8 @@ function toolReady() {
                                     let noPhrasalVerbsTooltip = document.getElementById("no-phrasal-verbs-tooltip");
                                     let phrasalVerbCount = phrasalVerbs.length;
                                     for (phrasalVerb of phrasalVerbs) {
-                                        textBoxContent = textBoxContent.replaceAll(phrasalVerb, '<span class="highlighted-error" data-hover="Error: use of \nphrasal verbs">' + phrasalVerb + '</span>');
+                                        const regex = new RegExp(phrasalVerb, 'g');
+                                        textBoxContent = textBoxContent.replace(regex, '<span class="highlighted-error" data-hover="Error: use of \nphrasal verbs">' + phrasalVerb + '</span>');
                                     }
                                     textBox.innerHTML = textBoxContent;
                                     if (phrasalVerbCount > 0) {
@@ -1092,7 +1102,8 @@ function toolReady() {
                                     let noInformalConnectorsTooltip = document.getElementById("no-informal-connectors-tooltip");
                                     let informalConnectorCount = informalConnectors.length;
                                     for (informalConnector of informalConnectors) {
-                                        textBoxContent = textBoxContent.replaceAll(informalConnector, '<span class="highlighted-error" data-hover="Error: use of \ninformal connectors">' + informalConnector + '</span>');
+                                        const regex = new RegExp(informalConnector, 'g');
+                                        textBoxContent = textBoxContent.replace(regex, '<span class="highlighted-error" data-hover="Error: use of \ninformal connectors">' + informalConnector + '</span>');
                                     }
                                     textBox.innerHTML = textBoxContent;
                                     if (informalConnectorCount > 0) {
